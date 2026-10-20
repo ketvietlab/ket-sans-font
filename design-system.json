@@ -7,8 +7,9 @@
     "phase": "Phase 4b — Latin Core + Vietnamese, Light, Regular, Medium and Bold",
     "vendorID": "KETV",
     "designer": "Két Việt",
-    "copyright": "Copyright 2026 Két Việt",
-    "license": "Proprietary. All rights reserved by Két Việt."
+    "copyright": "Copyright 2026 Két Việt. All rights reserved.",
+    "license": "Free to download and use, including commercially and embedded in websites, apps and documents, under the KÉT Sans Font License 1.0 (LICENSE.txt). Modifying or redistributing the font files is not permitted.",
+    "vendorURL": "https://ketviet.vn"
   },
   "metrics": {
     "unitsPerEm": 2048,

@@ -15,6 +15,9 @@ Cả bộ đang chờ duyệt. ExtraBold và SemiBold riêng chưa dựng.
 - Thông số (nguồn sự thật duy nhất): [design-system.json](design-system.json)
 - Bảng chữ mục tiêu: [charset.txt](charset.txt) (419 codepoint, sinh một lần từ glyphsets 1.1.3)
 - Specimen: [specimen/index.html](specimen/index.html)
+- Giấy phép: [LICENSE.txt](LICENSE.txt). Freeware độc quyền như SF Pro, không phải open source: ai cũng
+  được tải và dùng miễn phí, kể cả cho thương mại và nhúng vào web, app hay PDF, nhưng không được sửa
+  hoặc phân phối lại file font. Gói tải về chỉ chứa font, license và README; source ở repo này không phát hành.
 
 ## Có gì trong Phase 4b
 
@@ -40,7 +43,11 @@ uv venv .venv --python 3.12
 uv pip install --python .venv/bin/python -r requirements.txt
 .venv/bin/python scripts/build.py     # JSON → UFO → TTF/OTF/WOFF2 → specimen data → bảng tài liệu
 .venv/bin/python scripts/verify.py    # kiểm thử cấu trúc, kiểu chữ, tiếng Việt, tài liệu
+.venv/bin/python scripts/package.py   # gói tải về: build/dist/KETSans-<version>.zip
 ```
+
+Gói zip chứa `LICENSE.txt`, `README.txt` (từ `package/README.txt`) và các thư mục `OTF/`, `TTF/`, `WOFF2/`.
+Gói cũng tái lập được: các mục được sắp thứ tự và đóng dấu cùng `SOURCE_DATE_EPOCH` với bản build.
 
 Build tái lập được: cùng source thì cho cùng checksum, vì `SOURCE_DATE_EPOCH` được cố định và
 không có bước nào ghi lại timestamp. Vòng thiết kế nhanh: `scripts/draft.py [glyph…]` biên dịch
@@ -77,6 +84,8 @@ Chữ đặt 800–900 dùng Bold cho tới khi có ExtraBold; 100–200 dùng L
 ```text
 design-system.json        metrics, stroke, tension, shape, proportion, spacing, identity
 charset.txt               bảng chữ mục tiêu (verify.py kiểm độ phủ theo file này)
+LICENSE.txt               giấy phép sử dụng (tiếng Việt là bản chính, kèm bản tiếng Anh)
+package/README.txt        README của gói tải về
 scripts/ketsans/
   geometry.py             đường cong theo tiếp tuyến + độ căng, cắt contour, biến đổi, offset
   glyphs.py               master construction (stem, ring, arch, bowl, cut ring, diagonal, spine,
@@ -87,11 +96,13 @@ scripts/ketsans/
   marks.py                dấu, cặp dấu, chữ dựng sẵn từ charset.txt, ccmp
   kerning.py              nhóm kerning theo hình dạng cạnh, ngoại lệ chống va chạm
   ufo.py, master.py       ghi UFO3
+  cleanup.py              bộ lọc fontmake: bỏ điểm không mang hình sau khi gộp overlap
   measure.py, proof.py    ray-casting đo nét; proof PNG bằng FreeType + HarfBuzz
 scripts/build.py          build chính thức
 scripts/verify.py         bộ kiểm thử
 scripts/document.py       sinh bảng thông số trong FONT-DESIGN-SYSTEM.md
 scripts/specimen_data.py  xuất outline thật từ OTF cho specimen
+scripts/package.py        đóng gói zip để phát hành
 sources/  fonts/  specimen/
 ```
 
@@ -272,6 +283,17 @@ Những hình cần mắt người duyệt ở Phase 4a:
     - G không mở thêm (SF/Inter mở ×1.08), vì G dùng chung đường cắt với C, mà C phải giữ nguyên;
     - vòng % hẹp và cao hơn SF ở mọi weight (đặc điểm có sẵn từ Regular). Ở Light, cỡ vòng giữ
       bằng Regular thay vì co theo nét như trước khi sửa.
+
+16. Tự review trước khi phát hành (20-10). FontBakery bản googlefonts và soát toàn bộ charset ở Light
+    và Bold bắt được, rồi đã sửa:
+    - į, ị chưa mất chấm khi có dấu trên;
+    - chân W, w, y có bậc 2–8 đơn vị;
+    - chấm của . : ; ! ? … lệch 2 đơn vị;
+    - điểm thừa ở Œ, ¶;
+    - « ‹ bị lấp khe ở Medium và Bold, lề lệch ở mọi weight.
+
+    Còn chờ mắt người: « ‹ cao 0.48 x-height, trong khi SF 0.78, Inter 0.84 (đặc điểm có sẵn từ
+    Phase 3).
 
 Chưa kiểm: hiển thị trên Windows/ClearType (không có máy Windows) và Safari/WebKit (trình duyệt
 kiểm thử chỉ có Chromium).

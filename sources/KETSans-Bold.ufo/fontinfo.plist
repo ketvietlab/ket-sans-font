@@ -7,7 +7,7 @@
     <key>capHeight</key>
     <integer>1456</integer>
     <key>copyright</key>
-    <string>Copyright 2026 Két Việt</string>
+    <string>Copyright 2026 Két Việt. All rights reserved.</string>
     <key>descender</key>
     <integer>-420</integer>
     <key>familyName</key>
@@ -25,9 +25,11 @@
     <key>openTypeNameDesigner</key>
     <string>Két Việt</string>
     <key>openTypeNameLicense</key>
-    <string>Proprietary. All rights reserved by Két Việt.</string>
+    <string>Free to download and use, including commercially and embedded in websites, apps and documents, under the KÉT Sans Font License 1.0 (LICENSE.txt). Modifying or redistributing the font files is not permitted.</string>
     <key>openTypeNameManufacturer</key>
     <string>Két Việt</string>
+    <key>openTypeNameManufacturerURL</key>
+    <string>https://ketviet.vn</string>
     <key>openTypeOS2Selection</key>
     <array>
       <integer>7</integer>

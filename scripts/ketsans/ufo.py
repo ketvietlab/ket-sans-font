@@ -28,6 +28,7 @@ def font_info(font: ufoLib2.Font, system: System, style: str) -> None:
     info.openTypeNameDesigner = meta.designer
     info.openTypeNameManufacturer = meta.designer
     info.openTypeNameLicense = meta.license
+    info.openTypeNameManufacturerURL = meta.vendorURL
     info.openTypeNameDescription = "KÉT Sans — neutral neo-grotesque for Vietnamese interfaces. " + meta.phase
     info.openTypeOS2VendorID = meta.vendorID
     info.openTypeOS2WeightClass = system.wght
