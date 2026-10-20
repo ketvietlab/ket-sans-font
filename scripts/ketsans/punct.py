@@ -56,13 +56,13 @@ class PunctMixin:
     # ----------------------------------------------------------------- dots
     def colon(self):
         d = self._d
-        cs = [self.dot(d / 2, -2), self.dot(d / 2, self.xh - d + 2)]
+        cs = [self.dot(d / 2, 0), self.dot(d / 2, self.xh - d)]
         return self._g("colon", 0x3A, d + 260, cs, "two period dots, the upper one under the x-height", 130)
 
     def semicolon(self):
         d = self._d
         comma = self.comma()
-        cs = list(comma.contours) + [self.dot(120 + d / 2, self.xh - d + 2)]
+        cs = list(comma.contours) + [self.dot(120 + d / 2, self.xh - d)]
         return self._g("semicolon", 0x3B, comma.width, cs, "comma + colon dot")
 
     def exclam(self):
@@ -70,7 +70,7 @@ class PunctMixin:
         cx = 130 + d / 2
         wt, wb = 196 * self.wk, 160 * self.wk
         bar = polygon([(cx - wb / 2, 0.31 * C), (cx + wb / 2, 0.31 * C), (cx + wt / 2, C), (cx - wt / 2, C)]).oriented(True)
-        return self._g("exclam", 0x21, d + 260, [bar, self.dot(cx, -2)], "tapered stem (196 -> 160) + period dot")
+        return self._g("exclam", 0x21, d + 260, [bar, self.dot(cx, 0)], "tapered stem (196 -> 160) + period dot")
 
     def exclamdown(self):
         g = self.exclam()
@@ -99,7 +99,7 @@ class PunctMixin:
         c.cubic(left[2], left[1], left[0])
         c.curve((0.5 * W, T - top), 90, 180, ki)
         c.curve((t + 30, y_t), 180, 256, ki, kt)
-        return [c.close().oriented(True), self.dot(cx, -2)], W
+        return [c.close().oriented(True), self.dot(cx, 0)], W
 
     def question(self):
         cs, W = self._question_contours()
@@ -122,7 +122,7 @@ class PunctMixin:
     def ellipsis(self):
         d = self._d
         gap = 150
-        cs = [self.dot(d / 2 + i * (d + gap), -2) for i in range(3)]
+        cs = [self.dot(d / 2 + i * (d + gap), 0) for i in range(3)]
         return self._g("ellipsis", 0x2026, 3 * d + 2 * gap + 2 * 120, cs, "three period dots", 120)
 
     # --------------------------------------------------------------- quotes
@@ -188,16 +188,22 @@ class PunctMixin:
         return cs
 
     def _guil(self, name, uni, count, left):
-        st = self.st
-        w, h, t = 330, 520, st.punctStroke
+        """Chevrons keep Regular's angle and counter: a heavier stroke grows
+        outward, and the gap between the two chevrons of « stays, so the
+        counter never closes.  Equal side bearings either way."""
+        w, h, step0, sb = 330, 520, 300, 150
+        t, t0 = self.st.punctStroke, self.reg.punctStroke
         yc = 0.5 * self.xh
-        step = 300
-        hw = t / 2 / math.sin(math.atan2(h / 2, w))
+        L0 = w - t0 / 2 / math.sin(math.atan2(h / 2, w))  # Regular: tip to inner end corner
+        sin0 = math.sin(math.atan2(h / 2, hcut_centre((0, 0), L0, h / 2, t0, +1)[0]))
+        grow = (t - t0) / 2 / sin0  # the stroke's extra half-width along the axis
+        L, step = L0 + grow, step0 + 2 * grow
         cs = []
         for i in range(count):
-            cs += self._chevron(hw + i * step, yc, w - hw, h, t, left)
-        width = 2 * hw + (count - 1) * step + w - hw + 2 * 70
-        return self._g(name, uni, width, cs, f"{count} chevron(s) of punctStroke, pointed tip", 70)
+            cs += self._chevron(i * step, yc, L, h, t, left)
+        x0, x1 = min(c.bounds()[0] for c in cs), max(c.bounds()[2] for c in cs)
+        cs = [c.translated(sb - x0, 0) for c in cs]
+        return self._g(name, uni, x1 - x0 + 2 * sb, cs, f"{count} chevron(s) of punctStroke, pointed tip")
 
     def guilsinglleft(self):
         return self._guil("guilsinglleft", 0x2039, 1, True)

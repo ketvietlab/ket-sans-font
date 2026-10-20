@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import math
 
-from .geometry import Contour, intersect_lines, oval_quadrants, polygon, rect, stroke, superellipse
+from .geometry import Contour, intersect_lines, oval_quadrants, polygon, rect, shared_foot, stroke, superellipse
 from .glyphs import Glyph, _contour_from_beziers, _cut, _reverse_seg
 
 
@@ -209,7 +209,8 @@ class UpperMixin:
         b, c, d = 0.255 * W, 0.5 * W, 0.745 * W
         a = hcut_centre((b, 0), 0, C, t, -1)
         e = hcut_centre((d, 0), W, C, t, +1)
-        cs = [stroke(a, (b, 0), t), stroke((b, 0), (c, C), t), stroke((c, C), (d, 0), t), stroke((d, 0), e, t)]
+        cs = (shared_foot([stroke(a, (b, 0), t), stroke((b, 0), (c, C), t)])
+              + shared_foot([stroke((c, C), (d, 0), t), stroke((d, 0), e, t)]))
         return self._cap_glyph("W", 0x57, W, cs, sp.upperDiagonal, sp.upperDiagonal,
                                "two V at diagonalUpper - 12; middle apex at cap height")
 

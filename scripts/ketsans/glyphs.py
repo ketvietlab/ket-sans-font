@@ -689,7 +689,7 @@ class Builder:
     def dotlessi(self):
         S = self.st.stemLower
         g = Glyph("dotlessi", [0x131], S + 2 * self.sp.lowerStraight, [rect(0, 0, S, self.xh)], note="i without dot (base for Vietnamese marks)")
-        g.anchors = {"top": (S / 2, self.xh), "bottom": (S / 2, 0)}
+        g.anchors = {"top": (S / 2, self.xh), "bottom": (S / 2, 0), "ogonek": (S / 2, 0)}
         return g.shifted(self.sp.lowerStraight)
 
     def l(self):
@@ -752,7 +752,7 @@ class Builder:
 
     def period(self):
         d = self.sh.dotDiameter * self.st.stemLower
-        g = Glyph("period", [0x2E], d + 2 * 130, [self.dot(d / 2, -2)], note="i dot on the baseline")
+        g = Glyph("period", [0x2E], d + 2 * 130, [self.dot(d / 2, 0)], note="i dot on the baseline")
         return g.shifted(130)
 
     def comma(self):

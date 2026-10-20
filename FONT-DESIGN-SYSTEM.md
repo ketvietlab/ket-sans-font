@@ -158,7 +158,8 @@ ghi chú này ở mục phóng to glyph. Một thay đổi ở master lan sang m
   anchor `topright`, và chữ được nới bề rộng tới mép phải của dấu. Ģ Ķ Ļ Ņ ķ ļ ņ dùng phẩy dưới thay
   cho cedilla, ģ dùng phẩy ngược bên trên. Cedilla và ogonek gắn vào anchor `bottom`/`ogonek` và
   được hợp vào outline, nên chỗ nối không có overlap.
-- **Chuỗi dấu kết hợp:** `ccmp` thay i/j → ı/ȷ khi có dấu trên, đổi dấu sang `.case` sau chữ
+- **Chuỗi dấu kết hợp:** `ccmp` thay i/j → ı/ȷ và į/ị → bản dựng trên ı khi có dấu trên (kể cả
+  khi râu, cedilla hay phẩy dưới chen giữa), đổi dấu sang `.case` sau chữ
   hoa, ghép cặp dấu Việt, ghép o/u/O/U + râu thành ơ/ư/Ơ/Ư, đổi caron sang dạng phẩy sau d l t L
   và cedilla sang phẩy dưới sau G K L N k l n. `mark`/`mkmk` được sinh từ anchor. `verify.py`
   render từng chữ dựng sẵn (NFC) và so pixel với chuỗi NFD được định vị bằng GPOS trên một bản
@@ -604,5 +605,6 @@ và underline giống nhau ở mọi weight.
 ## 11. Font engineering
 
 `design-system.json` → `scripts/ketsans` → UFO3 (`sources/`) → fontmake (TTF và OTF chạy riêng,
-overlap gỡ bằng pathops, composite lồng được làm phẳng) → ttfautohint (TTF) → WOFF2. Timestamp
+overlap gỡ bằng pathops, bộ lọc `ketsans.cleanup` bỏ điểm không mang hình, composite lồng được
+làm phẳng) → ttfautohint (TTF) → WOFF2. Timestamp
 được cố định nên hai lần build cho ra checksum giống hệt. Chi tiết ở [README](README.md).

@@ -10,10 +10,15 @@ lookup CaseMarks {
     sub @TopMarks by @TopMarksCase;
 } CaseMarks;
 
+# Top level: feaLib keeps a lookupflag set inside a feature for every
+# later lookup of that feature.
+lookup DotlessIJ {
+    lookupflag UseMarkFilteringSet @TopMarks;
+    sub [i j iogonek uni1ECB]' @TopMarks by [dotlessi dotlessj iogonek.dotless uni1ECB.dotless];
+} DotlessIJ;
+
 feature ccmp {
-    lookup DotlessIJ {
-        sub [i j]' @TopMarks by [dotlessi dotlessj];
-    } DotlessIJ;
+    lookup DotlessIJ;
     lookup HornBase {
         sub o horncomb by ohorn;
         sub u horncomb by uhorn;

@@ -39,6 +39,9 @@ TOP_MARKS = {
 BOTTOM_MARKS = {0x0323: "dotbelowcomb", 0x0326: "commaaccentcomb", 0x0327: "cedillacomb"}
 OGONEK = 0x0328
 HORN = 0x031B
+# Soft-dotted letters whose dot is part of a precomposed glyph: ccmp swaps in
+# a twin built on ı before a top mark (į̀, ị́ in Lithuanian and Vietnamese).
+SOFT_DOTTED = [0x012F, 0x1ECB]
 
 # Spacing (modifier) forms of the marks.
 SPACING = {
@@ -504,8 +507,9 @@ def charset() -> list[int]:
     return [int(line.split()[0][2:], 16) for line in path.read_text(encoding="utf-8").splitlines() if line.startswith("U+")]
 
 
-def compose(cp: int, glyphs: dict[str, Glyph], cmap: dict[int, str]) -> Glyph:
-    """A precomposed letter as base + marks placed on anchors."""
+def compose(cp: int, glyphs: dict[str, Glyph], cmap: dict[int, str], dotless: bool = False) -> Glyph:
+    """A precomposed letter as base + marks placed on anchors.  `dotless`
+    builds the unencoded twin on ı/ȷ that ccmp swaps in before a top mark."""
     nfd = unicodedata.normalize("NFD", chr(cp))
     base_ch, rest = nfd[0], [ord(c) for c in nfd[1:]]
     suffix = ".case" if base_ch.isupper() else ""
@@ -515,7 +519,7 @@ def compose(cp: int, glyphs: dict[str, Glyph], cmap: dict[int, str]) -> Glyph:
     else:
         base_name = cmap[ord(base_ch)]
     tops = [c for c in rest if c in TOP_MARKS]
-    if tops and base_ch in "ij":
+    if (tops or dotless) and base_ch in "ij":
         base_name = {"i": "dotlessi", "j": "dotlessj"}[base_ch]
     base = glyphs[base_name]
     comps = [(base_name, 0, 0)]
@@ -543,7 +547,8 @@ def compose(cp: int, glyphs: dict[str, Glyph], cmap: dict[int, str]) -> Glyph:
             attach(BOTTOM_MARKS[c], "bottom")
         elif c == OGONEK:
             attach("ogonekcomb", "ogonek")
-    g = Glyph(glyph_name(cp), [cp], width, components=comps, note="precomposed (anchor-placed)")
+    name, unicodes = (glyph_name(cp) + ".dotless", []) if dotless else (glyph_name(cp), [cp])
+    g = Glyph(name, unicodes, width, components=comps, note="precomposed (anchor-placed)")
     if any(name in ATTACHED for name, _, _ in comps[1:]):
         # Marks that grow out of the letter overlap it on purpose; keep them
         # as contours so the build merges the overlap (TTF composites cannot).
@@ -592,14 +597,20 @@ def build_marks_and_letters(b: Builder, glyphs: dict[str, Glyph]) -> dict[str, G
             continue
         out[g.name] = allg[g.name] = g
         cmap[cp] = g.name
+    for cp in SOFT_DOTTED:
+        g = compose(cp, allg, cmap, dotless=True)
+        out[g.name] = allg[g.name] = g
     return out
 
 
 def features(glyphs: dict[str, Glyph]) -> str:
-    """ccmp for decomposed input: i/j lose their dot before top marks, case
+    """ccmp for decomposed input: i/j (and į/ị) lose their dot before top
+    marks, also past a horn, cedilla or comma below, case
     marks after capitals, vertical caron and Latvian commas in context,
     Vietnamese stacked pairs, and base+horn ligatures."""
     lc_marks = [n for n in TOP_MARKS.values()]
+    soft = " ".join(glyph_name(cp) for cp in SOFT_DOTTED)
+    soft_dotless = " ".join(glyph_name(cp) + ".dotless" for cp in SOFT_DOTTED)
     case_marks = [n + ".case" for n in lc_marks]
     uppers = sorted(n for n, g in glyphs.items() if g.unicodes and chr(g.unicodes[0]).isupper())
     pairs = []
@@ -620,10 +631,15 @@ def features(glyphs: dict[str, Glyph]) -> str:
         "    sub @TopMarks by @TopMarksCase;",
         "} CaseMarks;",
         "",
+        "# Top level: feaLib keeps a lookupflag set inside a feature for every",
+        "# later lookup of that feature.",
+        "lookup DotlessIJ {",
+        "    lookupflag UseMarkFilteringSet @TopMarks;",
+        f"    sub [i j {soft}]' @TopMarks by [dotlessi dotlessj {soft_dotless}];",
+        "} DotlessIJ;",
+        "",
         "feature ccmp {",
-        "    lookup DotlessIJ {",
-        "        sub [i j]' @TopMarks by [dotlessi dotlessj];",
-        "    } DotlessIJ;",
+        "    lookup DotlessIJ;",
         "    lookup HornBase {",
         "        sub o horncomb by ohorn;",
         "        sub u horncomb by uhorn;",

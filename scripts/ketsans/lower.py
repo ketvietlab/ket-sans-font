@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import math
 
-from .geometry import Contour, intersect_lines, offset_line, polygon, rect, stroke, untangled, x_at_y
+from .geometry import Contour, intersect_lines, offset_line, polygon, rect, shared_foot, stroke, untangled, with_corner, with_foot, x_at_y
 from .glyphs import Glyph
 from .upper import hcut_centre
 
@@ -118,7 +118,8 @@ class LowerMixin:
         b, c, d = 0.25 * W, 0.5 * W, 0.75 * W
         a = hcut_centre((b, 0), 0, X, t, -1)
         e = hcut_centre((d, 0), W, X, t, +1)
-        cs = [stroke(a, (b, 0), t), stroke((b, 0), (c, X), t), stroke((c, X), (d, 0), t), stroke((d, 0), e, t)]
+        cs = (shared_foot([stroke(a, (b, 0), t), stroke((b, 0), (c, X), t)])
+              + shared_foot([stroke((c, X), (d, 0), t), stroke((d, 0), e, t)]))
         return self._lc("w", 0x77, W, cs, sp.lowerDiagonal, sp.lowerDiagonal, "W at x-height")
 
     def x(self):
@@ -146,7 +147,13 @@ class LowerMixin:
         left_top = hcut_centre((vx, 0), 0, X, t, -1)
         right_top = hcut_centre((vx, 0), W, X, t, +1)
         tail = (vx - (right_top[0] - vx) * (-D) / X, D)
-        cs = [stroke(left_top, (vx, 0), t), stroke(right_top, tail, t)]
+        right = stroke(right_top, tail, t)
+        # The left arm's outer foot corner is a shared corner on the right
+        # stroke's edge and its inner corner sits 1 unit inside the stroke, so
+        # the rounded union has no unit step at the baseline.
+        rp = [right.start] + [seg[-1] for seg in right.segments]
+        xl, xr = sorted(x_at_y(p, q, 0) for p, q in zip(rp, rp[1:] + rp[:1]) if p[1] * q[1] < 0)
+        cs = [with_foot(stroke(left_top, (vx, 0), t), 0, xl, xr - 1), with_corner(right, (xl, 0))]
         return self._lc("y", 0x79, W, cs, sp.lowerDiagonal, sp.lowerDiagonal, "v whose right stroke runs straight to the descender",
                         {"top": (W / 2, X), "bottom": (vx + 170 + self._dot_clear(t), 0)})
 

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni1ECB.dotless" format="2">
+  <advance width="482"/>
+  <outline>
+    <component base="dotlessi"/>
+    <component base="dotbelowcomb" xOffset="241"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>precomposed (anchor-placed)</string>
+    </dict>
+  </lib>
+</glyph>

@@ -453,6 +453,8 @@
       <string>uni1EF7</string>
       <string>uni1EF8</string>
       <string>uni1EF9</string>
+      <string>iogonek.dotless</string>
+      <string>uni1ECB.dotless</string>
     </array>
     <key>public.openTypeCategories</key>
     <dict>
@@ -1221,6 +1223,8 @@
       <key>uni1ECA</key>
       <string>base</string>
       <key>uni1ECB</key>
+      <string>base</string>
+      <key>uni1ECB.dotless</key>
       <string>base</string>
       <key>uni1ECC</key>
       <string>base</string>

@@ -434,6 +434,37 @@ def x_at_y(p: Point, q: Point, y: float) -> float:
     return p[0] + (q[0] - p[0]) * (y - p[1]) / (q[1] - p[1])
 
 
+def with_corner(c: "Contour", p: Point) -> "Contour":
+    """A straight stroke with an extra corner at ``p``, a point on one of its
+    edges.  Another outline that meets the edge there then rounds to the same
+    integer point, so the overlap union leaves no sub-unit step."""
+    pts = [c.start] + [seg[-1] for seg in c.segments]
+    assert all(seg[0] == "line" for seg in c.segments), "a straight stroke"
+    for i, (a, b) in enumerate(zip(pts, pts[1:] + pts[:1])):
+        if min(a[1], b[1]) < p[1] < max(a[1], b[1]) and abs(x_at_y(a, b, p[1]) - p[0]) < 1e-6:
+            return polygon(pts[: i + 1] + [p] + pts[i + 1 :]).oriented(True)
+    raise AssertionError("the corner is not on an edge")
+
+
+def with_foot(c: "Contour", y: float, xl: float, xr: float) -> "Contour":
+    """A straight stroke whose two corners on the horizontal cut at ``y``
+    move to ``xl`` and ``xr``."""
+    pts = [c.start] + [seg[-1] for seg in c.segments]
+    on = sorted(p for p in pts if abs(p[1] - y) < 1e-6)
+    assert len(on) == 2 and all(seg[0] == "line" for seg in c.segments), "a straight stroke cut at y"
+    moved = {on[0]: (xl, y), on[1]: (xr, y)}
+    return polygon([moved.get(p, p) for p in pts]).oriented(True)
+
+
+def shared_foot(strokes: list, y: float = 0) -> list:
+    """Strokes ending on one horizontal cut at ``y`` (a W or w vertex) share
+    the whole cut.  Cuts of different slopes end a unit apart otherwise, and
+    the union keeps a 1-2 unit step at the foot."""
+    on = [p for c in strokes for p in [c.start] + [seg[-1] for seg in c.segments] if abs(p[1] - y) < 1e-6]
+    xl, xr = min(p[0] for p in on), max(p[0] for p in on)
+    return [with_foot(c, y, xl, xr) for c in strokes]
+
+
 def untangled(contour: "Contour") -> list:
     """The contour itself, or, if an offset folded it over itself, the clean
     outline of the area it covers (pathops simplify)."""

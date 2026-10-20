@@ -476,6 +476,8 @@
     <string>imacron.glif</string>
     <key>iogonek</key>
     <string>iogonek.glif</string>
+    <key>iogonek.dotless</key>
+    <string>iogonek.dotless.glif</string>
     <key>itilde</key>
     <string>itilde.glif</string>
     <key>j</key>
@@ -770,6 +772,8 @@
     <string>uni1E_C_A_.glif</string>
     <key>uni1ECB</key>
     <string>uni1E_C_B_.glif</string>
+    <key>uni1ECB.dotless</key>
+    <string>uni1E_C_B_.dotless.glif</string>
     <key>uni1ECC</key>
     <string>uni1E_C_C_.glif</string>
     <key>uni1ECD</key>

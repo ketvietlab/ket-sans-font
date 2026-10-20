@@ -3,8 +3,9 @@
     .venv/bin/python scripts/build.py
 
 1. design-system.json  -> sources/KETSans-<Master>.ufo  (generated, committed;
-                          one per master: Regular, Bold)
-2. fontmake            -> TTF (quadratic) and OTF (CFF), overlaps removed,
+                          one per weight: Light, Regular, Medium, Bold)
+2. fontmake            -> TTF (quadratic) and OTF (CFF), overlaps removed
+                          (then ketsans.cleanup drops shapeless points),
                           nested components flattened
 3. ttfautohint         -> hinted TTF for Windows/Linux small sizes
 4. fontTools           -> WOFF2 from the hinted TTF
@@ -70,7 +71,8 @@ def compile_master(style: str) -> tuple[Path, Path]:
 
     tmp = ROOT / "build" / "fontmake" / style
     shutil.rmtree(tmp, ignore_errors=True)
-    env = dict(os.environ, SOURCE_DATE_EPOCH=SOURCE_DATE_EPOCH)
+    # scripts/ on the path so fontmake can load the post-overlap cleanup filter.
+    env = dict(os.environ, SOURCE_DATE_EPOCH=SOURCE_DATE_EPOCH, PYTHONPATH=str(ROOT / "scripts"))
     # One fontmake call per format: a combined "-o ttf otf" run lets the CFF
     # decomposition leak into the TTF, turning every Vietnamese composite into
     # re-approximated contours (caught by the NFC/NFD pixel check).
@@ -79,6 +81,7 @@ def compile_master(style: str) -> tuple[Path, Path]:
             [
                 VENV_BIN / "fontmake", "-u", src, "-o", fmt,
                 "--output-dir", tmp, "--overlaps-backend", "pathops",
+                "--filter", "ketsans.cleanup::CleanupFilter",
                 "--flatten-components", "--verbose", "WARNING",
             ],
             env=env,
