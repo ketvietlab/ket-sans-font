@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="V" format="2">
+  <advance width="1332"/>
+  <unicode hex="0056"/>
+  <anchor x="666" y="0" name="bottom"/>
+  <anchor x="666" y="1456" name="top"/>
+  <outline>
+    <contour>
+      <point x="18.0" y="1456.0" type="line"/>
+      <point x="564.0" y="0.0" type="line"/>
+      <point x="768.0" y="0.0" type="line"/>
+      <point x="1314.0" y="1456.0" type="line"/>
+      <point x="1117.0" y="1456.0" type="line"/>
+      <point x="666.0" y="252.0" type="line"/>
+      <point x="215.0" y="1456.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>A inverted without bar</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="commaturnedabovecomb" format="2">
+  <anchor x="0" y="1088" name="_top"/>
+  <anchor x="0" y="1791" name="top"/>
+  <outline>
+    <contour>
+      <point x="-86.0" y="1326.0" type="curve" smooth="yes"/>
+      <point x="-86.0" y="1279.0"/>
+      <point x="-48.0" y="1240.0"/>
+      <point x="0.0" y="1240.0" type="curve" smooth="yes"/>
+      <point x="48.0" y="1240.0"/>
+      <point x="86.0" y="1279.0"/>
+      <point x="86.0" y="1326.0" type="curve" smooth="yes"/>
+      <point x="86.0" y="1374.0"/>
+      <point x="48.0" y="1413.0"/>
+      <point x="0.0" y="1413.0" type="curve" smooth="yes"/>
+      <point x="-48.0" y="1413.0"/>
+      <point x="-86.0" y="1374.0"/>
+    </contour>
+    <contour>
+      <point x="-81.0" y="1335.0" type="line"/>
+      <point x="35.0" y="1391.0" type="line"/>
+      <point x="75.0" y="1649.0" type="line"/>
+      <point x="-4.0" y="1649.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>comma x0.72 turned, above (ģ)</string>
+    </dict>
+  </lib>
+</glyph>

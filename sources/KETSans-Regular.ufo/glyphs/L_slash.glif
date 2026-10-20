@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Lslash" format="2">
+  <advance width="1098"/>
+  <unicode hex="0141"/>
+  <anchor x="575" y="0" name="bottom"/>
+  <anchor x="320" y="1456" name="top"/>
+  <outline>
+    <contour>
+      <point x="184.0" y="0.0" type="line"/>
+      <point x="376.0" y="0.0" type="line"/>
+      <point x="376.0" y="1456.0" type="line"/>
+      <point x="184.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="366.0" y="0.0" type="line"/>
+      <point x="1034.0" y="0.0" type="line"/>
+      <point x="1034.0" y="176.0" type="line"/>
+      <point x="366.0" y="176.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="54.0" y="583.0" type="line"/>
+      <point x="54.0" y="407.0" type="line"/>
+      <point x="676.0" y="786.0" type="line"/>
+      <point x="676.0" y="961.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>L + slash across the stem (vertical cuts)</string>
+    </dict>
+  </lib>
+</glyph>

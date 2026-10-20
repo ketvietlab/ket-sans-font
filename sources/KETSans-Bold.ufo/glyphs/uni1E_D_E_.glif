@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni1EDE" format="2">
+  <advance width="1572"/>
+  <unicode hex="1EDE"/>
+  <outline>
+    <component base="Ohorn"/>
+    <component base="hookabovecomb.case" xOffset="786" yOffset="14"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>precomposed (anchor-placed)</string>
+    </dict>
+  </lib>
+</glyph>

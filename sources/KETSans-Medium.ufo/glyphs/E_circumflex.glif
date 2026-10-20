@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Ecircumflex" format="2">
+  <advance width="1255"/>
+  <unicode hex="00CA"/>
+  <outline>
+    <component base="E"/>
+    <component base="circumflexcomb.case" xOffset="689"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>precomposed (anchor-placed)</string>
+    </dict>
+  </lib>
+</glyph>

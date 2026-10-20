@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="percent" format="2">
+  <advance width="1580"/>
+  <unicode hex="0025"/>
+  <outline>
+    <contour>
+      <point x="507.0" y="1144.0" type="curve" smooth="yes"/>
+      <point x="507.0" y="1336.0"/>
+      <point x="416.0" y="1470.0"/>
+      <point x="284.0" y="1470.0" type="curve" smooth="yes"/>
+      <point x="152.0" y="1470.0"/>
+      <point x="60.0" y="1336.0"/>
+      <point x="60.0" y="1144.0" type="curve" smooth="yes"/>
+      <point x="60.0" y="952.0"/>
+      <point x="152.0" y="818.0"/>
+      <point x="284.0" y="818.0" type="curve" smooth="yes"/>
+      <point x="416.0" y="818.0"/>
+      <point x="507.0" y="952.0"/>
+    </contour>
+    <contour>
+      <point x="332.0" y="1144.0" type="curve" smooth="yes"/>
+      <point x="332.0" y="1044.0"/>
+      <point x="312.0" y="972.0"/>
+      <point x="284.0" y="972.0" type="curve" smooth="yes"/>
+      <point x="256.0" y="972.0"/>
+      <point x="236.0" y="1044.0"/>
+      <point x="236.0" y="1144.0" type="curve" smooth="yes"/>
+      <point x="236.0" y="1244.0"/>
+      <point x="256.0" y="1316.0"/>
+      <point x="284.0" y="1316.0" type="curve" smooth="yes"/>
+      <point x="312.0" y="1316.0"/>
+      <point x="332.0" y="1244.0"/>
+    </contour>
+    <contour>
+      <point x="1520.0" y="312.0" type="curve" smooth="yes"/>
+      <point x="1520.0" y="504.0"/>
+      <point x="1428.0" y="638.0"/>
+      <point x="1296.0" y="638.0" type="curve" smooth="yes"/>
+      <point x="1164.0" y="638.0"/>
+      <point x="1073.0" y="504.0"/>
+      <point x="1073.0" y="312.0" type="curve" smooth="yes"/>
+      <point x="1073.0" y="120.0"/>
+      <point x="1164.0" y="-14.0"/>
+      <point x="1296.0" y="-14.0" type="curve" smooth="yes"/>
+      <point x="1428.0" y="-14.0"/>
+      <point x="1520.0" y="120.0"/>
+    </contour>
+    <contour>
+      <point x="1344.0" y="312.0" type="curve" smooth="yes"/>
+      <point x="1344.0" y="212.0"/>
+      <point x="1324.0" y="140.0"/>
+      <point x="1296.0" y="140.0" type="curve" smooth="yes"/>
+      <point x="1268.0" y="140.0"/>
+      <point x="1248.0" y="212.0"/>
+      <point x="1248.0" y="312.0" type="curve" smooth="yes"/>
+      <point x="1248.0" y="412.0"/>
+      <point x="1268.0" y="484.0"/>
+      <point x="1296.0" y="484.0" type="curve" smooth="yes"/>
+      <point x="1324.0" y="484.0"/>
+      <point x="1344.0" y="412.0"/>
+    </contour>
+    <contour>
+      <point x="410.0" y="0.0" type="line"/>
+      <point x="598.0" y="0.0" type="line"/>
+      <point x="1170.0" y="1456.0" type="line"/>
+      <point x="982.0" y="1456.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>two small rings + slash</string>
+    </dict>
+  </lib>
+</glyph>

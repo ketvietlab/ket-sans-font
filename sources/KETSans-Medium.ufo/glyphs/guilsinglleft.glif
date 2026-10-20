@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="guilsinglleft" format="2">
+  <advance width="611"/>
+  <unicode hex="2039"/>
+  <outline>
+    <contour>
+      <point x="118.0" y="544.0" type="line"/>
+      <point x="305.0" y="544.0" type="line"/>
+      <point x="400.0" y="804.0" type="line"/>
+      <point x="214.0" y="804.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="305.0" y="544.0" type="line"/>
+      <point x="118.0" y="544.0" type="line"/>
+      <point x="214.0" y="284.0" type="line"/>
+      <point x="400.0" y="284.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>1 chevron(s) of punctStroke, pointed tip</string>
+    </dict>
+  </lib>
+</glyph>

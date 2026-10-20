@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="k" format="2">
+  <advance width="1059"/>
+  <unicode hex="006B"/>
+  <anchor x="552" y="0" name="bottom"/>
+  <anchor x="241" y="1520" name="top"/>
+  <outline>
+    <contour>
+      <point x="170.0" y="0.0" type="line"/>
+      <point x="312.0" y="0.0" type="line"/>
+      <point x="312.0" y="1520.0" type="line"/>
+      <point x="170.0" y="1520.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="191.0" y="371.0" type="line"/>
+      <point x="291.0" y="282.0" type="line"/>
+      <point x="1008.0" y="1088.0" type="line"/>
+      <point x="830.0" y="1088.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="584.0" y="685.0" type="line"/>
+      <point x="468.0" y="608.0" type="line"/>
+      <point x="871.0" y="0.0" type="line"/>
+      <point x="1038.0" y="0.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>l stem + K arm/leg at x-height</string>
+    </dict>
+  </lib>
+</glyph>

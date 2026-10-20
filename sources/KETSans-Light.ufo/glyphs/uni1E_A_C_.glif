@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni1EAC" format="2">
+  <advance width="1322"/>
+  <unicode hex="1EAC"/>
+  <outline>
+    <component base="A"/>
+    <component base="circumflexcomb.case" xOffset="661"/>
+    <component base="dotbelowcomb" xOffset="661"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>precomposed (anchor-placed)</string>
+    </dict>
+  </lib>
+</glyph>

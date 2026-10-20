@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="X" format="2">
+  <advance width="1258"/>
+  <unicode hex="0058"/>
+  <anchor x="629" y="0" name="bottom"/>
+  <anchor x="629" y="1456" name="top"/>
+  <outline>
+    <contour>
+      <point x="25.0" y="0.0" type="line"/>
+      <point x="245.0" y="0.0" type="line"/>
+      <point x="1195.0" y="1456.0" type="line"/>
+      <point x="976.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1026.0" y="0.0" type="line"/>
+      <point x="1233.0" y="0.0" type="line"/>
+      <point x="269.0" y="1456.0" type="line"/>
+      <point x="63.0" y="1456.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>two crossing diagonals, top 40 narrower; the falling stroke 12 lighter</string>
+    </dict>
+  </lib>
+</glyph>

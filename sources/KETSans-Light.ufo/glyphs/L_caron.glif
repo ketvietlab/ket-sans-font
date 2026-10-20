@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Lcaron" format="2">
+  <advance width="1090"/>
+  <unicode hex="013D"/>
+  <outline>
+    <component base="L"/>
+    <component base="caroncomb.alt" xOffset="421" yOffset="1456"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>precomposed (anchor-placed)</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="z" format="2">
+  <advance width="960"/>
+  <unicode hex="007A"/>
+  <anchor x="480" y="0" name="bottom"/>
+  <anchor x="480" y="1088" name="top"/>
+  <outline>
+    <contour>
+      <point x="84.0" y="934.0" type="line"/>
+      <point x="880.0" y="934.0" type="line"/>
+      <point x="880.0" y="1088.0" type="line"/>
+      <point x="84.0" y="1088.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="60.0" y="0.0" type="line"/>
+      <point x="900.0" y="0.0" type="line"/>
+      <point x="900.0" y="158.0" type="line"/>
+      <point x="60.0" y="158.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="60.0" y="158.0" type="line"/>
+      <point x="287.0" y="158.0" type="line"/>
+      <point x="880.0" y="934.0" type="line"/>
+      <point x="653.0" y="934.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>Z at x-height with e-bar weight</string>
+    </dict>
+  </lib>
+</glyph>

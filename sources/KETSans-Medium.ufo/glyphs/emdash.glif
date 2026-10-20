@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="emdash" format="2">
+  <advance width="2048"/>
+  <unicode hex="2014"/>
+  <outline>
+    <contour>
+      <point x="60.0" y="425.0" type="line"/>
+      <point x="1988.0" y="425.0" type="line"/>
+      <point x="1988.0" y="598.0" type="line"/>
+      <point x="60.0" y="598.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>hyphen bar, one em</string>
+    </dict>
+  </lib>
+</glyph>

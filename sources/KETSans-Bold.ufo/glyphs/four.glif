@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="four" format="2">
+  <advance width="1360"/>
+  <unicode hex="0034"/>
+  <outline>
+    <contour>
+      <point x="820.0" y="0.0" type="line"/>
+      <point x="1128.0" y="0.0" type="line"/>
+      <point x="1128.0" y="1456.0" type="line"/>
+      <point x="820.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="101.0" y="313.0" type="line"/>
+      <point x="1259.0" y="313.0" type="line"/>
+      <point x="1259.0" y="557.0" type="line"/>
+      <point x="101.0" y="557.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="101.0" y="557.0" type="line"/>
+      <point x="409.0" y="557.0" type="line"/>
+      <point x="820.0" y="1071.0" type="line"/>
+      <point x="820.0" y="1456.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>closed 4: figure stem, bar at 0.215 reaching 0.14 cap past the stem, diagonal x0.78 meeting the stem top</string>
+    </dict>
+  </lib>
+</glyph>

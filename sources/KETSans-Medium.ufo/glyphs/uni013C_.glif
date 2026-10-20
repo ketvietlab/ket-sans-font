@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni013C" format="2">
+  <advance width="523"/>
+  <unicode hex="013C"/>
+  <outline>
+    <component base="l"/>
+    <component base="commaaccentcomb" xOffset="262"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>precomposed (anchor-placed)</string>
+    </dict>
+  </lib>
+</glyph>

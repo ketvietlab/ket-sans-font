@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name=".notdef" format="2">
+  <advance width="1240"/>
+  <outline>
+    <contour>
+      <point x="120.0" y="0.0" type="line"/>
+      <point x="1120.0" y="0.0" type="line"/>
+      <point x="1120.0" y="1456.0" type="line"/>
+      <point x="120.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="220.0" y="100.0" type="line"/>
+      <point x="220.0" y="1356.0" type="line"/>
+      <point x="1020.0" y="1356.0" type="line"/>
+      <point x="1020.0" y="100.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>empty box</string>
+    </dict>
+  </lib>
+</glyph>

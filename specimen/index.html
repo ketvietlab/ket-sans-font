@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KÉT Sans — specimen Phase 4b</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="specimen.css">
+  <script src="data.js"></script>
+</head>
+<body data-kern="on" data-missing="on">
+  <header class="topbar">
+    <h1>KÉT Sans <small id="version"></small></h1>
+    <label class="control">Cỡ chữ
+      <input id="size" type="range" min="11" max="160" value="40">
+      <input id="size-num" type="number" min="11" max="160" value="40"> px
+    </label>
+    <label class="control">Độ đậm
+      <select id="weight">
+        <option value="300">300 Light</option>
+        <option value="400" selected>400 Regular</option>
+        <option value="500">500 Medium</option>
+        <option value="600">600 → Medium</option>
+        <option value="700">700 Bold</option>
+        <option value="800" disabled>800 ExtraBold — chưa dựng</option>
+      </select>
+    </label>
+    <label class="control">So với
+      <select id="compare">
+        <option value="none">Không</option>
+        <option value="sf" selected>SF Pro</option>
+        <option value="inter">Inter</option>
+        <option value="bvp">Be Vietnam Pro</option>
+        <option value="all">Cả ba</option>
+      </select>
+    </label>
+    <label class="control"><input id="kern" type="checkbox" checked> Kerning</label>
+    <label class="control"><input id="missing" type="checkbox" checked> Tô chữ chưa vẽ</label>
+    <label class="control"><input id="theme" type="checkbox"> Nền tối</label>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Mục lục">
+      <a href="#overview">Tổng quan</a>
+      <a href="#upper">1. Chữ hoa</a>
+      <a href="#lower">2. Chữ thường</a>
+      <a href="#figures">3. Số và dấu câu</a>
+      <a href="#vietnamese">4. Tiếng Việt</a>
+      <a href="#latin">4b. Latin mở rộng</a>
+      <a href="#weights">5. Độ đậm</a>
+      <a href="#detail">6. Phóng to glyph</a>
+      <a href="#paragraph">7. Đoạn văn</a>
+      <a href="#spacing">8. Spacing và kerning</a>
+      <a href="#components">9. UI components</a>
+      <a href="#dashboard">10. Dashboard</a>
+      <a href="#sizes">So sánh theo cỡ</a>
+    </nav>
+
+    <main>
+      <section class="panel" id="overview">
+        <h2>Tổng quan</h2>
+        <p class="lede">Light, Regular, Medium và Bold với bảng chữ Latin Core + tiếng Việt + ₫ (419 ký tự, <code>charset.txt</code>). Mọi chữ trên trang này
+          được render từ <code>fonts/woff2/KETSans-Light.woff2</code>, <code>KETSans-Regular.woff2</code>, <code>KETSans-Medium.woff2</code> và <code>KETSans-Bold.woff2</code> đã build thật, kể cả khung trang. Ký tự ngoài bảng chữ hiển thị
+          bằng font hệ thống; trong các mẫu chữ, chúng còn được tô màu để không bị nhầm là KÉT Sans. Trang tắt <code>font-synthesis</code>
+          nên trình duyệt không tự làm đậm giả.</p>
+        <div class="two-col">
+          <table class="facts" id="facts"></table>
+          <table class="facts" id="identity"></table>
+        </div>
+      </section>
+
+      <section class="panel" id="upper">
+        <h2>1. Chữ hoa</h2>
+        <p class="lede">26 chữ hoa cùng Æ Œ Ø Ð Đ Þ Ł Ħ ẞ, dựng từ các master: thân + thanh ngang (E F L T), bowl cạnh thân (B D P R),
+          vòng cắt (C G), chén (U J), nét chéo (A K M V W X Y Z). Bấm vào một glyph để xem phóng to và ghi chú kế thừa.</p>
+        <div class="glyph-grid" data-grid="ABCDEFGHIJKLMNOPQRSTUVWXYZÆŒØÐĐÞŁĦẞ"></div>
+      </section>
+
+      <section class="panel" id="lower">
+        <h2>2. Chữ thường</h2>
+        <p class="lede">g một tầng, móc f j ȷ lấy từ móc t, y đuôi thẳng; ß æ œ ø ð þ ħ ł và chữ số thứ tự ª º.</p>
+        <div class="glyph-grid" data-grid="abcdefghijklmnopqrstuvwxyzıȷßæœøðþđħłªº"></div>
+      </section>
+
+      <section class="panel" id="figures">
+        <h2>3. Số, dấu câu và ký hiệu</h2>
+        <p class="lede">Số, tiền tệ (có ₫) và ký hiệu toán dùng chung bề rộng tabular 1280 để cột số thẳng hàng. Dấu câu dựng từ
+          chấm i, dấu phẩy và nét ngang của chữ.</p>
+        <div class="glyph-grid" data-grid="0123456789$¢£¥€₫+−×÷=&lt;&gt;~^%#&amp;@.,:;…!?¡¿·•-–—_()[]{}/\|&#x27;&quot;‘’“”‚„‹›«»*§¶°©®™"></div>
+      </section>
+
+      <section class="panel" id="vietnamese">
+        <h2>4. Tiếng Việt</h2>
+        <p class="lede">Dấu được thiết kế cùng nét (158) và cùng lối cắt đầu nét theo lưới. Sau dấu mũ, dấu sắc/huyền/hỏi
+          đặt lệch phải; dấu ngã và mọi dấu sau dấu trăng chồng dọc. Chữ hoa dùng dấu dẹt hơn (<code>.case</code>).</p>
+        <div class="glyph-grid" id="viet-grid"></div>
+        <h3 class="label" style="margin:16px 0 6px">Chuỗi kiểm tra bắt buộc (chữ chưa vẽ được tô màu)</h3>
+        <div class="sample ket" data-check style="--size:36px">Tiếng Việt – Quản lý – Hệ thống – Đường dẫn – Người dùng – Nguyễn – Thương mại – Cộng hòa – Số lượng – Dữ liệu</div>
+        <h3 class="label" style="margin:16px 0 6px">NFC (dựng sẵn) và NFD (chữ gốc + dấu kết hợp) phải giống hệt</h3>
+        <div class="compare-rows">
+          <div class="compare-row"><span class="who">NFC</span><span class="sample ket" id="nfc" style="--size:48px"></span></div>
+          <div class="compare-row"><span class="who">NFD</span><span class="sample ket" id="nfd" style="--size:48px"></span></div>
+        </div>
+      </section>
+
+      <section class="panel" id="latin">
+        <h2>4b. Latin mở rộng</h2>
+        <p class="lede">Mọi chữ có dấu của GF Latin Core được ghép từ anchor, không vẽ tay. Dấu đặt trên chữ hoa tròn (O C G Q S) được nâng
+          thêm nửa overshoot; ď ľ ť Ľ dùng caron dạng phẩy; Ķ Ļ Ņ Ģ dùng phẩy dưới; cedilla và ogonek nối liền vào chữ.</p>
+        <div class="glyph-grid" id="latin-grid"></div>
+        <div class="sample ket" data-check style="--size:28px; margin-top:12px">Français : « Où est la gare ? » — Deutsch: Größe, Straße — Polski: zażółć gęślą jaźń — Čeština: příliš žluťoučký kůň — Română: știință, țară — Türkçe: ışık, İstanbul — Dansk: Ærø, Øresund</div>
+      </section>
+
+      <section class="panel" id="weights">
+        <h2>5. Độ đậm</h2>
+        <p class="lede">Phase 4b dựng Light (300), Regular (400) và Bold (700) từ cùng một hệ thông số; Light và Bold lấy tỷ lệ đổi nét, bề rộng,
+          khoảng trắng và khe mở đo trên SF Pro và Inter (Bold thêm Helvetica). Medium (500) không vẽ riêng: mọi thông số nội suy ở 1/3 quãng Regular → Bold, đúng chỗ
+          SF và Inter đặt 500. Chữ 600 của giao diện cũng dùng Medium (face khai báo <code>font-weight: 500 600</code>). ExtraBold
+          và SemiBold riêng chưa dựng. Hàng dưới so KÉT với font tham chiếu ở cùng độ đậm; chọn độ đậm
+          trên thanh công cụ để mọi mẫu chữ chuyển theo.</p>
+        <div class="compare-rows" id="weight-rows"></div>
+      </section>
+
+      <section class="panel" id="detail">
+        <h2>6. Phóng to glyph</h2>
+        <p class="lede">Outline lấy trực tiếp từ OTF (cubic). Chấm đỏ là điểm trên đường, chấm rỗng là handle. Đường liền là baseline,
+          x-height, cap height, ascender và descender; đường đứt là vùng overshoot.</p>
+        <div class="detail">
+          <svg id="glyph-svg" role="img" aria-label="Glyph phóng to"></svg>
+          <table class="facts" id="glyph-facts"></table>
+        </div>
+      </section>
+
+      <section class="panel" id="paragraph">
+        <h2>7. Đoạn văn</h2>
+        <p class="lede">Gõ trực tiếp vào đoạn văn để thử. Ký tự ngoài bảng chữ được tô màu.</p>
+        <div class="sample ket" contenteditable="true" spellcheck="false" data-check style="--size:20px; line-height:1.6; max-width:68ch">Báo cáo quý III/2026: doanh thu đạt 12,5 tỷ ₫ (+8,4% so với cùng kỳ), chi phí vận hành giảm 3%. Kế hoạch tháng 10 gồm rà soát công nợ, chốt tồn kho và đối chiếu 1.248 hóa đơn với ngân hàng — hạn chót: 31/10.</div>
+        <div class="sample ket" contenteditable="true" spellcheck="false" data-check style="--size:16px; line-height:1.6; max-width:68ch; margin-top:12px">Phần mềm quản lý doanh nghiệp cần một kiểu chữ đọc tốt ở cỡ nhỏ, giữ nhịp đều trong bảng số liệu dày đặc và hiển thị dấu tiếng Việt rõ ràng trên mọi màn hình.</div>
+        <h3 class="label" style="margin:16px 0 6px">Thác cỡ chữ 11 → 32 px</h3>
+        <div class="waterfall ket" id="waterfall" data-check></div>
+      </section>
+
+      <section class="panel" id="spacing">
+        <h2>8. Spacing và kerning</h2>
+        <p class="lede">Sidebearing theo hình dạng cạnh: thẳng 160/184, tròn 106/116, bowl 104, chéo 18/20, tay mở 40–96. Kerning chỉ sửa
+          các cặp chéo, tay mở (T F L P) và dấu câu; 109 ngoại lệ tự tính từ outline giữ mọi cặp cách nhau ≥ 60 (T + ĩ không chạm).
+          Bỏ chọn “Kerning” trên thanh công cụ để so.</p>
+        <div class="sample ket" data-check style="--size:56px">HOHOHOH nonononon<br>HIHOIOHI nmnhnunr<br>AVA VOV AVo Va Vo. r.<br>ỜA ĂV VỚ Vớ Vẫn<br>Tôi Tý Yêu LT L’ P. F. Tĩ Tï «Tờ»</div>
+      </section>
+
+      <section class="panel" id="components">
+        <h2>9. UI components</h2>
+        <p class="lede">Kích thước theo Két Design System: thân 13/20, control cao 32 px, bo góc 8 px, dòng bảng 40 px. Chưa có
+          weight 600 riêng nên phân cấp chữ ở đây vẫn chỉ dùng cỡ và màu; Medium và Bold xem ở mục 5.</p>
+        <div class="two-col ui ket" data-check>
+          <div class="grid" style="gap:16px; align-content:start">
+            <div class="ui-row">
+              <button class="btn primary">Lưu đơn hàng</button>
+              <button class="btn">Xuất Excel</button>
+              <button class="btn quiet">Hủy</button>
+              <button class="btn primary" disabled>Duyệt</button>
+            </div>
+            <div class="tabs" role="tablist">
+              <span class="tab" role="tab" aria-selected="true">Tổng quan</span>
+              <span class="tab" role="tab">Đơn hàng</span>
+              <span class="tab" role="tab">Công nợ</span>
+            </div>
+            <div class="field"><label for="f1">Khách hàng</label><input id="f1" class="input ket" value="Công ty TNHH Phú Quý"></div>
+            <div class="field"><label for="f2">Mã số thuế</label><input id="f2" class="input ket" value="0316 789 123"></div>
+            <div class="field"><label for="f3">Ngày đến hạn</label><input id="f3" class="input ket" value="20/12/2026"></div>
+            <div class="field"><label for="f4">Hạn mức</label>
+              <div class="grid" style="gap:4px"><input id="f4" class="input ket is-invalid" value="2.100.000 ₫" aria-invalid="true"><span class="help error">Vượt hạn mức 100.000 ₫ — cần kế toán trưởng duyệt.</span></div>
+            </div>
+            <div class="ui-row"><span class="badge pos">Đã thanh toán</span><span class="badge">Nháp</span><span class="badge warn">Sắp đến hạn</span><span class="badge neg">Quá hạn</span></div>
+          </div>
+          <div class="grid" style="gap:16px; align-content:start">
+            <div class="dialog" role="dialog" aria-labelledby="dlg-t">
+              <h3 id="dlg-t">Xuất hóa đơn HD-2045?</h3>
+              <div>Hóa đơn điện tử sẽ được ký số và gửi tới kế toán của khách hàng. Bạn không thể sửa sau khi xuất.</div>
+              <div class="actions"><button class="btn">Để sau</button><button class="btn primary">Xuất hóa đơn</button></div>
+            </div>
+            <div class="phone">
+              <div style="font: 400 24px/32px var(--ket)">Đơn hàng</div>
+              <div class="row"><div>HD-2045<div class="sub">Phú Quý, 03/10/2026</div></div><div>12.100.000 ₫</div></div>
+              <div class="row"><div>HD-2038<div class="sub">Việt Ánh, 28/09/2026</div></div><div>2.010.000 ₫</div></div>
+              <div class="row"><div>HD-2031<div class="sub">Gia Khánh, 21/09/2026</div></div><div>748.500 ₫</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="dashboard">
+        <h2>10. Dashboard</h2>
+        <p class="lede">Màn ERP mật độ cao dựng bằng KÉT Sans Regular; số liệu tài chính dùng số tabular.</p>
+        <div class="dash ket" data-check>
+          <nav aria-label="Điều hướng">
+            <a class="root" href="#dashboard">Bán hàng</a>
+            <a href="#dashboard" aria-current="page">Đơn hàng <span class="count">1.248</span></a>
+            <a href="#dashboard">Khách hàng <span class="count">312</span></a>
+            <a href="#dashboard">Báo giá <span class="count">27</span></a>
+            <a href="#dashboard">Kho <span class="count">48</span></a>
+            <a class="root" href="#dashboard">Kế toán</a>
+            <a href="#dashboard">Công nợ</a>
+            <a href="#dashboard">Báo cáo thuế</a>
+          </nav>
+          <div class="body">
+            <div class="head"><h3>Đơn hàng tháng 10</h3><div class="ui-row"><button class="btn">Lọc</button><button class="btn primary">Tạo đơn</button></div></div>
+            <div class="kpis">
+              <div class="kpi"><span class="k">Doanh thu</span><span class="v">12.480.500.000 ₫</span><span class="d" style="color:var(--positive)">+8,4% so với tháng 9</span></div>
+              <div class="kpi"><span class="k">Đơn hàng</span><span class="v">1.248</span><span class="d" style="color:var(--positive)">+3,1%</span></div>
+              <div class="kpi"><span class="k">Công nợ</span><span class="v">1.012.300.000 ₫</span><span class="d" style="color:var(--danger)">−2,2%</span></div>
+              <div class="kpi"><span class="k">Quá hạn</span><span class="v">17</span><span class="d" style="color:var(--warning)">hóa đơn cần nhắc</span></div>
+            </div>
+            <div class="surface">
+              <div class="title">Đơn hàng gần đây <span class="badge">1.248</span></div>
+              <table class="data">
+                <thead><tr><th>Mã đơn</th><th>Khách hàng</th><th>Ngày</th><th class="num">Tổng tiền (₫)</th><th class="num">Đã thu (₫)</th><th>Trạng thái</th></tr></thead>
+                <tbody>
+                  <tr><td>HD-2045</td><td>Công ty TNHH Phú Quý</td><td>03/10/2026</td><td class="num">12.100.000</td><td class="num">1.200.000</td><td><span class="badge warn">Sắp đến hạn</span></td></tr>
+                  <tr><td>HD-2044</td><td>Việt Ánh Group</td><td>02/10/2026</td><td class="num">2.010.000</td><td class="num">2.010.000</td><td><span class="badge pos">Đã thanh toán</span></td></tr>
+                  <tr><td>HD-2043</td><td>Nhà sách Gia Khánh</td><td>01/10/2026</td><td class="num">748.500</td><td class="num">0</td><td><span class="badge neg">Quá hạn</span></td></tr>
+                  <tr><td>HD-2042</td><td>Cửa hàng Ngọc Yến</td><td>30/09/2026</td><td class="num">21.000.200</td><td class="num">10.000.000</td><td><span class="badge">Nháp</span></td></tr>
+                  <tr><td>HD-2041</td><td>Bếp Ấm Đà Lạt</td><td>29/09/2026</td><td class="num">3.456.789</td><td class="num">3.456.789</td><td><span class="badge pos">Đã thanh toán</span></td></tr>
+                  <tr><td>HD-2040</td><td>Quỹ Xã hội Hướng Dương</td><td>28/09/2026</td><td class="num">200.200.000</td><td class="num">20.000.000</td><td><span class="badge warn">Sắp đến hạn</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="sizes">
+        <h2>So sánh theo cỡ (11–32 px, 400)</h2>
+        <p class="lede">Cùng chuỗi, cùng cỡ, cùng điều kiện render. Font tham chiếu chỉ được rasterize để so, không lấy outline.</p>
+        <div id="size-compare" class="grid" style="gap:14px"></div>
+      </section>
+    </main>
+  </div>
+  <script src="specimen.js"></script>
+</body>
+</html>

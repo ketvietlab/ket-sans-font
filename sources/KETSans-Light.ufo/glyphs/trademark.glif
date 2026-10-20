@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="trademark" format="2">
+  <advance width="1305"/>
+  <unicode hex="2122"/>
+  <outline>
+    <contour>
+      <point x="80.0" y="1382.0" type="line"/>
+      <point x="562.0" y="1382.0" type="line"/>
+      <point x="562.0" y="1467.0" type="line"/>
+      <point x="80.0" y="1467.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="276.0" y="826.0" type="line"/>
+      <point x="366.0" y="826.0" type="line"/>
+      <point x="366.0" y="1416.0" type="line"/>
+      <point x="276.0" y="1416.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="622.0" y="826.0" type="line"/>
+      <point x="709.0" y="826.0" type="line"/>
+      <point x="709.0" y="1467.0" type="line"/>
+      <point x="622.0" y="1467.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1139.0" y="826.0" type="line"/>
+      <point x="1225.0" y="826.0" type="line"/>
+      <point x="1225.0" y="1467.0" type="line"/>
+      <point x="1139.0" y="1467.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="615.0" y="1467.0" type="line"/>
+      <point x="882.0" y="826.0" type="line"/>
+      <point x="977.0" y="826.0" type="line"/>
+      <point x="710.0" y="1467.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1233.0" y="1467.0" type="line"/>
+      <point x="1138.0" y="1467.0" type="line"/>
+      <point x="870.0" y="826.0" type="line"/>
+      <point x="965.0" y="826.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>T and M x0.42 (stroke x0.62), top on the cap height</string>
+    </dict>
+  </lib>
+</glyph>

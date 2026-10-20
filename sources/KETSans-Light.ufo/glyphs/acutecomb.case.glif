@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="acutecomb.case" format="2">
+  <anchor x="0" y="1456" name="_top"/>
+  <anchor x="0" y="1899" name="top"/>
+  <outline>
+    <contour>
+      <point x="-173.0" y="1558.0" type="line"/>
+      <point x="-34.0" y="1558.0" type="line"/>
+      <point x="173.0" y="1808.0" type="line"/>
+      <point x="11.0" y="1808.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>Vietnamese mark, markStroke pen</string>
+    </dict>
+  </lib>
+</glyph>

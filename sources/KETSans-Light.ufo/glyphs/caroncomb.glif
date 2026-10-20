@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="caroncomb" format="2">
+  <unicode hex="030C"/>
+  <anchor x="0" y="1088" name="_top"/>
+  <anchor x="0" y="1682" name="top"/>
+  <outline>
+    <contour>
+      <point x="-306.0" y="1540.0" type="line"/>
+      <point x="-43.0" y="1240.0" type="line"/>
+      <point x="43.0" y="1240.0" type="line"/>
+      <point x="306.0" y="1540.0" type="line"/>
+      <point x="150.0" y="1540.0" type="line"/>
+      <point x="0.0" y="1369.0" type="line"/>
+      <point x="-150.0" y="1540.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>Vietnamese mark, markStroke pen</string>
+    </dict>
+  </lib>
+</glyph>

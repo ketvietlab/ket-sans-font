@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lslash" format="2">
+  <advance width="682"/>
+  <unicode hex="0142"/>
+  <outline>
+    <contour>
+      <point x="270.0" y="0.0" type="line"/>
+      <point x="412.0" y="0.0" type="line"/>
+      <point x="412.0" y="1520.0" type="line"/>
+      <point x="270.0" y="1520.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="111.0" y="570.0" type="line"/>
+      <point x="111.0" y="431.0" type="line"/>
+      <point x="571.0" y="731.0" type="line"/>
+      <point x="571.0" y="870.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>l + slash (vertical cuts)</string>
+    </dict>
+  </lib>
+</glyph>

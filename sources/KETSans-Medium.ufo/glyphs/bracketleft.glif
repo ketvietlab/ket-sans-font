@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="bracketleft" format="2">
+  <advance width="590"/>
+  <unicode hex="005B"/>
+  <outline>
+    <contour>
+      <point x="150.0" y="-400.0" type="line"/>
+      <point x="355.0" y="-400.0" type="line"/>
+      <point x="355.0" y="1640.0" type="line"/>
+      <point x="150.0" y="1640.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="345.0" y="1467.0" type="line"/>
+      <point x="530.0" y="1467.0" type="line"/>
+      <point x="530.0" y="1640.0" type="line"/>
+      <point x="345.0" y="1640.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="345.0" y="-400.0" type="line"/>
+      <point x="530.0" y="-400.0" type="line"/>
+      <point x="530.0" y="-227.0" type="line"/>
+      <point x="345.0" y="-227.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>stem + bar-weight arms</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="thorn" format="2">
+  <advance width="1310"/>
+  <unicode hex="00FE"/>
+  <anchor x="825" y="0" name="bottom"/>
+  <anchor x="825" y="1088" name="top"/>
+  <outline>
+    <contour>
+      <point x="406.0" y="860.0" type="line"/>
+      <point x="360.0" y="751.0" type="line"/>
+      <point x="430.0" y="751.0" type="line"/>
+      <point x="451.0" y="823.0"/>
+      <point x="546.0" y="876.0"/>
+      <point x="656.0" y="876.0" type="curve" smooth="yes"/>
+      <point x="803.0" y="876.0"/>
+      <point x="910.0" y="737.0"/>
+      <point x="910.0" y="544.0" type="curve" smooth="yes"/>
+      <point x="910.0" y="351.0"/>
+      <point x="803.0" y="212.0"/>
+      <point x="656.0" y="212.0" type="curve" smooth="yes"/>
+      <point x="546.0" y="212.0"/>
+      <point x="451.0" y="265.0"/>
+      <point x="430.0" y="337.0" type="curve"/>
+      <point x="360.0" y="337.0" type="line"/>
+      <point x="406.0" y="228.0" type="line"/>
+      <point x="430.0" y="131.0" type="line" smooth="yes"/>
+      <point x="453.0" y="39.0"/>
+      <point x="598.0" y="-22.0"/>
+      <point x="786.0" y="-22.0" type="curve" smooth="yes"/>
+      <point x="1042.0" y="-22.0"/>
+      <point x="1220.0" y="210.0"/>
+      <point x="1220.0" y="544.0" type="curve" smooth="yes"/>
+      <point x="1220.0" y="878.0"/>
+      <point x="1042.0" y="1110.0"/>
+      <point x="786.0" y="1110.0" type="curve" smooth="yes"/>
+      <point x="598.0" y="1110.0"/>
+      <point x="453.0" y="1049.0"/>
+      <point x="430.0" y="957.0" type="curve" smooth="yes"/>
+    </contour>
+    <contour>
+      <point x="430.0" y="-420.0" type="line"/>
+      <point x="430.0" y="1520.0" type="line"/>
+      <point x="136.0" y="1520.0" type="line"/>
+      <point x="136.0" y="-420.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>p bowl + stem from descender to ascender</string>
+    </dict>
+  </lib>
+</glyph>

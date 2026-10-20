@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="E" format="2">
+  <advance width="1242"/>
+  <unicode hex="0045"/>
+  <anchor x="687" y="0" name="bottom"/>
+  <anchor x="1074" y="0" name="ogonek"/>
+  <anchor x="687" y="1456" name="top"/>
+  <outline>
+    <contour>
+      <point x="184.0" y="0.0" type="line"/>
+      <point x="376.0" y="0.0" type="line"/>
+      <point x="376.0" y="1456.0" type="line"/>
+      <point x="184.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="366.0" y="1286.0" type="line"/>
+      <point x="1114.0" y="1286.0" type="line"/>
+      <point x="1114.0" y="1456.0" type="line"/>
+      <point x="366.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="366.0" y="661.0" type="line"/>
+      <point x="1050.0" y="661.0" type="line"/>
+      <point x="1050.0" y="825.0" type="line"/>
+      <point x="366.0" y="825.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="366.0" y="0.0" type="line"/>
+      <point x="1130.0" y="0.0" type="line"/>
+      <point x="1130.0" y="176.0" type="line"/>
+      <point x="366.0" y="176.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>H stem + H bar height; arms open</string>
+    </dict>
+  </lib>
+</glyph>

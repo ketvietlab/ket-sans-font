@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="backslash" format="2">
+  <advance width="838"/>
+  <unicode hex="005C"/>
+  <outline>
+    <contour>
+      <point x="808.0" y="-280.0" type="line"/>
+      <point x="188.0" y="1600.0" type="line"/>
+      <point x="30.0" y="1600.0" type="line"/>
+      <point x="650.0" y="-280.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>slash mirrored</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="gravecomb.case" format="2">
+  <anchor x="0" y="1456" name="_top"/>
+  <anchor x="0" y="1888" name="top"/>
+  <outline>
+    <contour>
+      <point x="195.0" y="1552.0" type="line"/>
+      <point x="11.0" y="1802.0" type="line"/>
+      <point x="-195.0" y="1802.0" type="line"/>
+      <point x="12.0" y="1552.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>Vietnamese mark, markStroke pen</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,13 @@
+# Direct dependencies of the KÉT Sans build and QA. Pinned set: requirements.txt
+fonttools[ufo,unicode,woff]
+ufoLib2
+fontmake
+ufo2ft
+skia-pathops
+ttfautohint-py
+uharfbuzz
+freetype-py
+Pillow
+numpy
+opentype-sanitizer
+fontbakery

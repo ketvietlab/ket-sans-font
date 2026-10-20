@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Hbar" format="2">
+  <advance width="1504"/>
+  <unicode hex="0126"/>
+  <anchor x="752" y="0" name="bottom"/>
+  <anchor x="752" y="1456" name="top"/>
+  <outline>
+    <contour>
+      <point x="184.0" y="0.0" type="line"/>
+      <point x="376.0" y="0.0" type="line"/>
+      <point x="376.0" y="1456.0" type="line"/>
+      <point x="184.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1128.0" y="0.0" type="line"/>
+      <point x="1320.0" y="0.0" type="line"/>
+      <point x="1320.0" y="1456.0" type="line"/>
+      <point x="1128.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="366.0" y="658.0" type="line"/>
+      <point x="1138.0" y="658.0" type="line"/>
+      <point x="1138.0" y="828.0" type="line"/>
+      <point x="366.0" y="828.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="114.0" y="1077.0" type="line"/>
+      <point x="1390.0" y="1077.0" type="line"/>
+      <point x="1390.0" y="1227.0" type="line"/>
+      <point x="114.0" y="1227.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>H + bar above the crossbar</string>
+    </dict>
+  </lib>
+</glyph>

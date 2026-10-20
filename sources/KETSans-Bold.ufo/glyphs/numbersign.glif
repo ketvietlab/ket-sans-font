@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="numbersign" format="2">
+  <advance width="1360"/>
+  <unicode hex="0023"/>
+  <outline>
+    <contour>
+      <point x="330.0" y="0.0" type="line"/>
+      <point x="590.0" y="0.0" type="line"/>
+      <point x="710.0" y="1456.0" type="line"/>
+      <point x="450.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="670.0" y="0.0" type="line"/>
+      <point x="930.0" y="0.0" type="line"/>
+      <point x="1050.0" y="1456.0" type="line"/>
+      <point x="790.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="220.0" y="359.0" type="line"/>
+      <point x="1160.0" y="359.0" type="line"/>
+      <point x="1160.0" y="602.0" type="line"/>
+      <point x="220.0" y="602.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="220.0" y="825.0" type="line"/>
+      <point x="1160.0" y="825.0" type="line"/>
+      <point x="1160.0" y="1068.0" type="line"/>
+      <point x="220.0" y="1068.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>slanted stems + bar-weight bars, tabular</string>
+    </dict>
+  </lib>
+</glyph>

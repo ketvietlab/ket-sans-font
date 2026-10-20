@@ -1,0 +1,53 @@
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn VIT;
+
+@TopMarks = [gravecomb acutecomb circumflexcomb tildecomb macroncomb brevecomb dotaccentcomb dieresiscomb hookabovecomb ringcomb hungarumlautcomb caroncomb];
+@TopMarksCase = [gravecomb.case acutecomb.case circumflexcomb.case tildecomb.case macroncomb.case brevecomb.case dotaccentcomb.case dieresiscomb.case hookabovecomb.case ringcomb.case hungarumlautcomb.case caroncomb.case];
+@Uppercase = [A AE Aacute Abreve Acircumflex Adieresis Agrave Amacron Aogonek Aring Atilde B C Cacute Ccaron Ccedilla Cdotaccent D Dcaron Dcroat E Eacute Ecaron Ecircumflex Edieresis Edotaccent Egrave Emacron Eogonek Eth F G Gbreve Gdotaccent H Hbar I Iacute Icircumflex Idieresis Idotaccent Igrave Imacron Iogonek Itilde J K L Lacute Lcaron Lslash M N Nacute Ncaron Ntilde O OE Oacute Ocircumflex Odieresis Ograve Ohorn Ohungarumlaut Oslash Otilde P Q R Racute Rcaron S Sacute Scaron Scedilla T Tcaron Thorn U Uacute Ucircumflex Udieresis Ugrave Uhorn Uhungarumlaut Umacron Uogonek Uring Utilde V W Wacute Wcircumflex Wdieresis Wgrave X Y Yacute Ycircumflex Ydieresis Ygrave Z Zacute Zcaron Zdotaccent uni0122 uni0136 uni013B uni0145 uni0218 uni021A uni1E9E uni1EA0 uni1EA2 uni1EA4 uni1EA6 uni1EA8 uni1EAA uni1EAC uni1EAE uni1EB0 uni1EB2 uni1EB4 uni1EB6 uni1EB8 uni1EBA uni1EBC uni1EBE uni1EC0 uni1EC2 uni1EC4 uni1EC6 uni1EC8 uni1ECA uni1ECC uni1ECE uni1ED0 uni1ED2 uni1ED4 uni1ED6 uni1ED8 uni1EDA uni1EDC uni1EDE uni1EE0 uni1EE2 uni1EE4 uni1EE6 uni1EE8 uni1EEA uni1EEC uni1EEE uni1EF0 uni1EF4 uni1EF6 uni1EF8];
+
+lookup CaseMarks {
+    sub @TopMarks by @TopMarksCase;
+} CaseMarks;
+
+feature ccmp {
+    lookup DotlessIJ {
+        sub [i j]' @TopMarks by [dotlessi dotlessj];
+    } DotlessIJ;
+    lookup HornBase {
+        sub o horncomb by ohorn;
+        sub u horncomb by uhorn;
+        sub O horncomb by Ohorn;
+        sub U horncomb by Uhorn;
+    } HornBase;
+    lookup CaronAlt {
+        sub [L d l t] caroncomb' by caroncomb.alt;
+    } CaronAlt;
+    lookup CedillaComma {
+        sub [G K L N k l n] cedillacomb' by commaaccentcomb;
+        sub g cedillacomb' by commaturnedabovecomb;
+    } CedillaComma;
+    lookup CaseContext {
+        sub @Uppercase @TopMarks' lookup CaseMarks;
+        sub @Uppercase @TopMarksCase @TopMarks' lookup CaseMarks;
+        sub @Uppercase dotbelowcomb @TopMarks' lookup CaseMarks;
+    } CaseContext;
+    lookup VietnamesePairs {
+    sub circumflexcomb acutecomb by circumflexcomb_acutecomb;
+    sub circumflexcomb gravecomb by circumflexcomb_gravecomb;
+    sub circumflexcomb hookabovecomb by circumflexcomb_hookabovecomb;
+    sub circumflexcomb tildecomb by circumflexcomb_tildecomb;
+    sub brevecomb acutecomb by brevecomb_acutecomb;
+    sub brevecomb gravecomb by brevecomb_gravecomb;
+    sub brevecomb hookabovecomb by brevecomb_hookabovecomb;
+    sub brevecomb tildecomb by brevecomb_tildecomb;
+    sub circumflexcomb.case acutecomb.case by circumflexcomb_acutecomb.case;
+    sub circumflexcomb.case gravecomb.case by circumflexcomb_gravecomb.case;
+    sub circumflexcomb.case hookabovecomb.case by circumflexcomb_hookabovecomb.case;
+    sub circumflexcomb.case tildecomb.case by circumflexcomb_tildecomb.case;
+    sub brevecomb.case acutecomb.case by brevecomb_acutecomb.case;
+    sub brevecomb.case gravecomb.case by brevecomb_gravecomb.case;
+    sub brevecomb.case hookabovecomb.case by brevecomb_hookabovecomb.case;
+    sub brevecomb.case tildecomb.case by brevecomb_tildecomb.case;
+    } VietnamesePairs;
+} ccmp;

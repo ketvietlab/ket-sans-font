@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ogonek" format="2">
+  <advance width="527"/>
+  <unicode hex="02DB"/>
+  <outline>
+    <component base="ogonekcomb" xOffset="253"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>spacing ogonekcomb</string>
+    </dict>
+  </lib>
+</glyph>

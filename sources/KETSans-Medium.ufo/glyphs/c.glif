@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="c" format="2">
+  <advance width="1145"/>
+  <unicode hex="0063"/>
+  <anchor x="610" y="0" name="bottom"/>
+  <anchor x="610" y="1088" name="top"/>
+  <outline>
+    <contour>
+      <point x="1078.0" y="730.0" type="line"/>
+      <point x="1021.0" y="970.0"/>
+      <point x="849.0" y="1110.0"/>
+      <point x="600.0" y="1110.0" type="curve" smooth="yes"/>
+      <point x="305.0" y="1110.0"/>
+      <point x="101.0" y="878.0"/>
+      <point x="101.0" y="544.0" type="curve" smooth="yes"/>
+      <point x="101.0" y="210.0"/>
+      <point x="305.0" y="-22.0"/>
+      <point x="600.0" y="-22.0" type="curve" smooth="yes"/>
+      <point x="844.0" y="-22.0"/>
+      <point x="1013.0" y="112.0"/>
+      <point x="1074.0" y="342.0" type="curve"/>
+      <point x="837.0" y="342.0" type="line"/>
+      <point x="794.0" y="229.0"/>
+      <point x="711.0" y="164.0"/>
+      <point x="600.0" y="164.0" type="curve" smooth="yes"/>
+      <point x="443.0" y="164.0"/>
+      <point x="330.0" y="324.0"/>
+      <point x="330.0" y="544.0" type="curve" smooth="yes"/>
+      <point x="330.0" y="764.0"/>
+      <point x="443.0" y="924.0"/>
+      <point x="600.0" y="924.0" type="curve" smooth="yes"/>
+      <point x="716.0" y="924.0"/>
+      <point x="802.0" y="853.0"/>
+      <point x="842.0" y="730.0" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>o ring cut by horizontal terminals</string>
+    </dict>
+  </lib>
+</glyph>

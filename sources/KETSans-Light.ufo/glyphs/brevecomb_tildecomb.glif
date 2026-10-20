@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="brevecomb_tildecomb" format="2">
+  <anchor x="0" y="1088" name="_top"/>
+  <anchor x="0" y="1981" name="top"/>
+  <outline>
+    <component base="brevecomb"/>
+    <component base="tildecomb" yOffset="348"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>Vietnamese stacked pair</string>
+    </dict>
+  </lib>
+</glyph>

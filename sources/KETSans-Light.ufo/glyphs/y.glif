@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="y" format="2">
+  <advance width="998"/>
+  <unicode hex="0079"/>
+  <anchor x="656" y="0" name="bottom"/>
+  <anchor x="499" y="1088" name="top"/>
+  <outline>
+    <contour>
+      <point x="170.0" y="1088.0" type="line"/>
+      <point x="21.0" y="1088.0" type="line"/>
+      <point x="444.0" y="0.0" type="line"/>
+      <point x="594.0" y="0.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="977.0" y="1088.0" type="line"/>
+      <point x="830.0" y="1088.0" type="line"/>
+      <point x="297.0" y="-420.0" type="line"/>
+      <point x="444.0" y="-420.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>v whose right stroke runs straight to the descender</string>
+    </dict>
+  </lib>
+</glyph>

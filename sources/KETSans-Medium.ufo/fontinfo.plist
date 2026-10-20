@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>ascender</key>
+    <integer>1520</integer>
+    <key>capHeight</key>
+    <integer>1456</integer>
+    <key>copyright</key>
+    <string>Copyright 2026 Két Việt</string>
+    <key>descender</key>
+    <integer>-420</integer>
+    <key>familyName</key>
+    <string>KET Sans</string>
+    <key>italicAngle</key>
+    <integer>0</integer>
+    <key>openTypeHheaAscender</key>
+    <integer>1960</integer>
+    <key>openTypeHheaDescender</key>
+    <integer>-520</integer>
+    <key>openTypeHheaLineGap</key>
+    <integer>0</integer>
+    <key>openTypeNameDescription</key>
+    <string>KÉT Sans — neutral neo-grotesque for Vietnamese interfaces. Phase 4b — Latin Core + Vietnamese, Light, Regular, Medium and Bold</string>
+    <key>openTypeNameDesigner</key>
+    <string>Két Việt</string>
+    <key>openTypeNameLicense</key>
+    <string>Proprietary. All rights reserved by Két Việt.</string>
+    <key>openTypeNameManufacturer</key>
+    <string>Két Việt</string>
+    <key>openTypeOS2Selection</key>
+    <array>
+      <integer>7</integer>
+    </array>
+    <key>openTypeOS2StrikeoutPosition</key>
+    <integer>597</integer>
+    <key>openTypeOS2StrikeoutSize</key>
+    <integer>143</integer>
+    <key>openTypeOS2Type</key>
+    <array/>
+    <key>openTypeOS2TypoAscender</key>
+    <integer>1960</integer>
+    <key>openTypeOS2TypoDescender</key>
+    <integer>-520</integer>
+    <key>openTypeOS2TypoLineGap</key>
+    <integer>0</integer>
+    <key>openTypeOS2VendorID</key>
+    <string>KETV</string>
+    <key>openTypeOS2WeightClass</key>
+    <integer>500</integer>
+    <key>openTypeOS2WidthClass</key>
+    <integer>5</integer>
+    <key>postscriptBlueValues</key>
+    <array>
+      <integer>-28</integer>
+      <integer>0</integer>
+      <integer>1088</integer>
+      <integer>1110</integer>
+      <integer>1456</integer>
+      <integer>1484</integer>
+      <integer>1520</integer>
+      <integer>1528</integer>
+    </array>
+    <key>postscriptFontName</key>
+    <string>KETSans-Medium</string>
+    <key>postscriptFullName</key>
+    <string>KET Sans Medium</string>
+    <key>postscriptOtherBlues</key>
+    <array>
+      <integer>-420</integer>
+      <integer>-412</integer>
+    </array>
+    <key>postscriptStemSnapH</key>
+    <array>
+      <integer>173</integer>
+      <integer>198</integer>
+    </array>
+    <key>postscriptStemSnapV</key>
+    <array>
+      <integer>219</integer>
+      <integer>232</integer>
+    </array>
+    <key>postscriptUnderlinePosition</key>
+    <integer>-200</integer>
+    <key>postscriptUnderlineThickness</key>
+    <integer>114</integer>
+    <key>styleMapFamilyName</key>
+    <string>KET Sans Medium</string>
+    <key>styleMapStyleName</key>
+    <string>regular</string>
+    <key>styleName</key>
+    <string>Medium</string>
+    <key>trademark</key>
+    <string>KÉT is a trademark of Két Việt.</string>
+    <key>unitsPerEm</key>
+    <integer>2048</integer>
+    <key>versionMajor</key>
+    <integer>0</integer>
+    <key>versionMinor</key>
+    <integer>300</integer>
+    <key>xHeight</key>
+    <integer>1088</integer>
+  </dict>
+</plist>

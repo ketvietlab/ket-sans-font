@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="guillemotleft" format="2">
+  <advance width="911"/>
+  <unicode hex="00AB"/>
+  <outline>
+    <contour>
+      <point x="118.0" y="544.0" type="line"/>
+      <point x="305.0" y="544.0" type="line"/>
+      <point x="400.0" y="804.0" type="line"/>
+      <point x="214.0" y="804.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="305.0" y="544.0" type="line"/>
+      <point x="118.0" y="544.0" type="line"/>
+      <point x="214.0" y="284.0" type="line"/>
+      <point x="400.0" y="284.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="418.0" y="544.0" type="line"/>
+      <point x="605.0" y="544.0" type="line"/>
+      <point x="700.0" y="804.0" type="line"/>
+      <point x="514.0" y="804.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="605.0" y="544.0" type="line"/>
+      <point x="418.0" y="544.0" type="line"/>
+      <point x="514.0" y="284.0" type="line"/>
+      <point x="700.0" y="284.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>2 chevron(s) of punctStroke, pointed tip</string>
+    </dict>
+  </lib>
+</glyph>

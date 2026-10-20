@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="W" format="2">
+  <advance width="1856"/>
+  <unicode hex="0057"/>
+  <anchor x="928" y="0" name="bottom"/>
+  <anchor x="928" y="1456" name="top"/>
+  <outline>
+    <contour>
+      <point x="196.0" y="1456.0" type="line"/>
+      <point x="18.0" y="1456.0" type="line"/>
+      <point x="393.0" y="0.0" type="line"/>
+      <point x="571.0" y="0.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="392.0" y="0.0" type="line"/>
+      <point x="572.0" y="0.0" type="line"/>
+      <point x="1018.0" y="1456.0" type="line"/>
+      <point x="838.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1018.0" y="1456.0" type="line"/>
+      <point x="838.0" y="1456.0" type="line"/>
+      <point x="1284.0" y="0.0" type="line"/>
+      <point x="1464.0" y="0.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1285.0" y="0.0" type="line"/>
+      <point x="1463.0" y="0.0" type="line"/>
+      <point x="1838.0" y="1456.0" type="line"/>
+      <point x="1660.0" y="1456.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>two V at diagonalUpper - 12; middle apex at cap height</string>
+    </dict>
+  </lib>
+</glyph>

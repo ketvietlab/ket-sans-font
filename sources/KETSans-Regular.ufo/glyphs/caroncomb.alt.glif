@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="caroncomb.alt" format="2">
+  <anchor x="0" y="0" name="_topright"/>
+  <outline>
+    <contour>
+      <point x="168.0" y="-84.0" type="curve" smooth="yes"/>
+      <point x="168.0" y="-38.0"/>
+      <point x="131.0" y="0.0"/>
+      <point x="84.0" y="0.0" type="curve" smooth="yes"/>
+      <point x="38.0" y="0.0"/>
+      <point x="0.0" y="-38.0"/>
+      <point x="0.0" y="-84.0" type="curve" smooth="yes"/>
+      <point x="0.0" y="-131.0"/>
+      <point x="38.0" y="-168.0"/>
+      <point x="84.0" y="-168.0" type="curve" smooth="yes"/>
+      <point x="131.0" y="-168.0"/>
+      <point x="168.0" y="-131.0"/>
+    </contour>
+    <contour>
+      <point x="163.0" y="-92.0" type="line"/>
+      <point x="50.0" y="-147.0" type="line"/>
+      <point x="11.0" y="-398.0" type="line"/>
+      <point x="88.0" y="-398.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>vertical caron: comma x0.70 beside the stem (ď ľ ť Ľ)</string>
+    </dict>
+  </lib>
+</glyph>

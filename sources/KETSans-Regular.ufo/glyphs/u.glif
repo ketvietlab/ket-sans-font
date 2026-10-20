@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="u" format="2">
+  <advance width="1184"/>
+  <unicode hex="0075"/>
+  <anchor x="586" y="0" name="bottom"/>
+  <anchor x="1024" y="979" name="horn"/>
+  <anchor x="933" y="0" name="ogonek"/>
+  <anchor x="576" y="1088" name="top"/>
+  <outline>
+    <contour>
+      <point x="1024.0" y="1088.0" type="line"/>
+      <point x="842.0" y="1088.0" type="line"/>
+      <point x="842.0" y="0.0" type="line"/>
+      <point x="1024.0" y="0.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="869.0" y="237.0" type="line"/>
+      <point x="932.0" y="237.0" type="line"/>
+      <point x="932.0" y="381.0" type="line"/>
+      <point x="842.0" y="381.0" type="line"/>
+      <point x="802.0" y="242.0"/>
+      <point x="690.0" y="142.0"/>
+      <point x="576.0" y="142.0" type="curve" smooth="yes"/>
+      <point x="433.0" y="142.0"/>
+      <point x="330.0" y="243.0"/>
+      <point x="330.0" y="382.0" type="curve" smooth="yes"/>
+      <point x="330.0" y="1088.0" type="line"/>
+      <point x="148.0" y="1088.0" type="line"/>
+      <point x="148.0" y="370.0" type="line" smooth="yes"/>
+      <point x="148.0" y="137.0"/>
+      <point x="306.0" y="-18.0"/>
+      <point x="542.0" y="-18.0" type="curve" smooth="yes"/>
+      <point x="700.0" y="-18.0"/>
+      <point x="820.0" y="41.0"/>
+      <point x="842.0" y="131.0" type="curve" smooth="yes"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>n rotated 180°</string>
+    </dict>
+  </lib>
+</glyph>

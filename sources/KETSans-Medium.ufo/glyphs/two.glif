@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="two" format="2">
+  <advance width="1307"/>
+  <unicode hex="0032"/>
+  <outline>
+    <contour>
+      <point x="157.0" y="1016.0" type="curve"/>
+      <point x="405.0" y="1016.0" type="line"/>
+      <point x="448.0" y="1188.0"/>
+      <point x="549.0" y="1293.0"/>
+      <point x="654.0" y="1293.0" type="curve" smooth="yes"/>
+      <point x="813.0" y="1293.0"/>
+      <point x="928.0" y="1172.0"/>
+      <point x="928.0" y="1005.0" type="curve" smooth="yes"/>
+      <point x="928.0" y="926.0"/>
+      <point x="586.0" y="582.0"/>
+      <point x="133.0" y="202.0" type="curve"/>
+      <point x="133.0" y="0.0" type="line"/>
+      <point x="1184.0" y="0.0" type="line"/>
+      <point x="1184.0" y="202.0" type="line"/>
+      <point x="432.0" y="202.0" type="line"/>
+      <point x="849.0" y="552.0"/>
+      <point x="1164.0" y="899.0"/>
+      <point x="1164.0" y="1019.0" type="curve" smooth="yes"/>
+      <point x="1164.0" y="1293.0"/>
+      <point x="955.0" y="1484.0"/>
+      <point x="654.0" y="1484.0" type="curve" smooth="yes"/>
+      <point x="429.0" y="1484.0"/>
+      <point x="229.0" y="1306.0"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>c-like top + one-curve spine + base at cap-bar weight</string>
+    </dict>
+  </lib>
+</glyph>

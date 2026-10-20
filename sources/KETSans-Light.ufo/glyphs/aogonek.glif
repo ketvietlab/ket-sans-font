@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="aogonek" format="2">
+  <advance width="1097"/>
+  <unicode hex="0105"/>
+  <outline>
+    <contour>
+      <point x="940.0" y="0.0" type="line"/>
+      <point x="940.0" y="718.0" type="line" smooth="yes"/>
+      <point x="940.0" y="953.0"/>
+      <point x="777.0" y="1110.0"/>
+      <point x="533.0" y="1110.0" type="curve" smooth="yes"/>
+      <point x="317.0" y="1110.0"/>
+      <point x="172.0" y="1000.0"/>
+      <point x="135.0" y="816.0" type="curve"/>
+      <point x="287.0" y="816.0" type="line"/>
+      <point x="322.0" y="922.0"/>
+      <point x="411.0" y="984.0"/>
+      <point x="536.0" y="984.0" type="curve" smooth="yes"/>
+      <point x="690.0" y="984.0"/>
+      <point x="802.0" y="867.0"/>
+      <point x="802.0" y="706.0" type="curve" smooth="yes"/>
+      <point x="802.0" y="0.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="862.0" y="669.0" type="line"/>
+      <point x="802.0" y="669.0" type="line"/>
+      <point x="483.0" y="652.0" type="line" smooth="yes"/>
+      <point x="252.0" y="640.0"/>
+      <point x="92.0" y="502.0"/>
+      <point x="92.0" y="315.0" type="curve" smooth="yes"/>
+      <point x="92.0" y="116.0"/>
+      <point x="238.0" y="-22.0"/>
+      <point x="447.0" y="-22.0" type="curve" smooth="yes"/>
+      <point x="629.0" y="-22.0"/>
+      <point x="774.0" y="52.0"/>
+      <point x="802.0" y="163.0" type="curve" smooth="yes"/>
+      <point x="824.0" y="251.0" type="line"/>
+      <point x="862.0" y="392.0" type="line"/>
+      <point x="802.0" y="392.0" type="line"/>
+      <point x="802.0" y="225.0"/>
+      <point x="683.0" y="104.0"/>
+      <point x="520.0" y="104.0" type="curve" smooth="yes"/>
+      <point x="356.0" y="104.0"/>
+      <point x="237.0" y="194.0"/>
+      <point x="237.0" y="319.0" type="curve" smooth="yes"/>
+      <point x="237.0" y="436.0"/>
+      <point x="340.0" y="526.0"/>
+      <point x="483.0" y="533.0" type="curve" smooth="yes"/>
+      <point x="802.0" y="550.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="821.0" y="40.0" type="line"/>
+      <point x="769.0" y="-50.0"/>
+      <point x="733.0" y="-129.0"/>
+      <point x="733.0" y="-153.0" type="curve" smooth="yes"/>
+      <point x="733.0" y="-227.0"/>
+      <point x="799.0" y="-279.0"/>
+      <point x="894.0" y="-279.0" type="curve" smooth="yes"/>
+      <point x="920.0" y="-279.0"/>
+      <point x="969.0" y="-270.0"/>
+      <point x="1004.0" y="-259.0" type="curve"/>
+      <point x="1004.0" y="-198.0" type="line"/>
+      <point x="1001.0" y="-199.0"/>
+      <point x="952.0" y="-199.0"/>
+      <point x="894.0" y="-199.0" type="curve" smooth="yes"/>
+      <point x="858.0" y="-199.0"/>
+      <point x="831.0" y="-180.0"/>
+      <point x="831.0" y="-153.0" type="curve" smooth="yes"/>
+      <point x="831.0" y="-144.0"/>
+      <point x="874.0" y="-62.0"/>
+      <point x="933.0" y="40.0" type="curve"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>precomposed, attached mark merged into the outline</string>
+    </dict>
+  </lib>
+</glyph>

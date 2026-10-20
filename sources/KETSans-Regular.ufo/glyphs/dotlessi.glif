@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="dotlessi" format="2">
+  <advance width="502"/>
+  <unicode hex="0131"/>
+  <anchor x="251" y="0" name="bottom"/>
+  <anchor x="251" y="1088" name="top"/>
+  <outline>
+    <contour>
+      <point x="160.0" y="0.0" type="line"/>
+      <point x="342.0" y="0.0" type="line"/>
+      <point x="342.0" y="1088.0" type="line"/>
+      <point x="160.0" y="1088.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>i without dot (base for Vietnamese marks)</string>
+    </dict>
+  </lib>
+</glyph>

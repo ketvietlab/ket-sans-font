@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="quoteleft" format="2">
+  <advance width="480"/>
+  <unicode hex="2018"/>
+  <outline>
+    <contour>
+      <point x="120.0" y="1008.0" type="curve" smooth="yes"/>
+      <point x="120.0" y="942.0"/>
+      <point x="174.0" y="888.0"/>
+      <point x="240.0" y="888.0" type="curve" smooth="yes"/>
+      <point x="306.0" y="888.0"/>
+      <point x="360.0" y="942.0"/>
+      <point x="360.0" y="1008.0" type="curve" smooth="yes"/>
+      <point x="360.0" y="1074.0"/>
+      <point x="306.0" y="1128.0"/>
+      <point x="240.0" y="1128.0" type="curve" smooth="yes"/>
+      <point x="174.0" y="1128.0"/>
+      <point x="120.0" y="1074.0"/>
+    </contour>
+    <contour>
+      <point x="128.0" y="1020.0" type="line"/>
+      <point x="288.0" y="1098.0" type="line"/>
+      <point x="344.0" y="1456.0" type="line"/>
+      <point x="234.0" y="1456.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>’ rotated 180°</string>
+    </dict>
+  </lib>
+</glyph>

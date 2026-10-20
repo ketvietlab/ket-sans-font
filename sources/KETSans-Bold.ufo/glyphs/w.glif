@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="w" format="2">
+  <advance width="1638"/>
+  <unicode hex="0077"/>
+  <anchor x="819" y="0" name="bottom"/>
+  <anchor x="819" y="1088" name="top"/>
+  <outline>
+    <contour>
+      <point x="289.0" y="1088.0" type="line"/>
+      <point x="17.0" y="1088.0" type="line"/>
+      <point x="282.0" y="0.0" type="line"/>
+      <point x="554.0" y="0.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="277.0" y="0.0" type="line"/>
+      <point x="559.0" y="0.0" type="line"/>
+      <point x="960.0" y="1088.0" type="line"/>
+      <point x="678.0" y="1088.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="960.0" y="1088.0" type="line"/>
+      <point x="678.0" y="1088.0" type="line"/>
+      <point x="1079.0" y="0.0" type="line"/>
+      <point x="1361.0" y="0.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1084.0" y="0.0" type="line"/>
+      <point x="1356.0" y="0.0" type="line"/>
+      <point x="1621.0" y="1088.0" type="line"/>
+      <point x="1349.0" y="1088.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>W at x-height</string>
+    </dict>
+  </lib>
+</glyph>

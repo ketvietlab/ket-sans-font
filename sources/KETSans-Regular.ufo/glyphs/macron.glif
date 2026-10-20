@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="macron" format="2">
+  <advance width="700"/>
+  <unicode hex="00AF"/>
+  <outline>
+    <component base="macroncomb" xOffset="350"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>spacing macroncomb</string>
+    </dict>
+  </lib>
+</glyph>

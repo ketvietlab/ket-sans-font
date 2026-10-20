@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="H" format="2">
+  <advance width="1516"/>
+  <unicode hex="0048"/>
+  <anchor x="758" y="0" name="bottom"/>
+  <anchor x="758" y="1456" name="top"/>
+  <outline>
+    <contour>
+      <point x="175.0" y="0.0" type="line"/>
+      <point x="407.0" y="0.0" type="line"/>
+      <point x="407.0" y="1456.0" type="line"/>
+      <point x="175.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1109.0" y="0.0" type="line"/>
+      <point x="1341.0" y="0.0" type="line"/>
+      <point x="1341.0" y="1456.0" type="line"/>
+      <point x="1109.0" y="1456.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="397.0" y="644.0" type="line"/>
+      <point x="1119.0" y="644.0" type="line"/>
+      <point x="1119.0" y="842.0" type="line"/>
+      <point x="397.0" y="842.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>stem + bar master</string>
+    </dict>
+  </lib>
+</glyph>

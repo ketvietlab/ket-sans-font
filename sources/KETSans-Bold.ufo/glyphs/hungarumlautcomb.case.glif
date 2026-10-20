@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="hungarumlautcomb.case" format="2">
+  <anchor x="0" y="1456" name="_top"/>
+  <anchor x="0" y="1860" name="top"/>
+  <outline>
+    <contour>
+      <point x="-345.0" y="1543.0" type="line"/>
+      <point x="-152.0" y="1543.0" type="line"/>
+      <point x="40.0" y="1783.0" type="line"/>
+      <point x="-213.0" y="1783.0" type="line"/>
+    </contour>
+    <contour>
+      <point x="-40.0" y="1543.0" type="line"/>
+      <point x="153.0" y="1543.0" type="line"/>
+      <point x="345.0" y="1783.0" type="line"/>
+      <point x="91.0" y="1783.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>Vietnamese mark, markStroke pen</string>
+    </dict>
+  </lib>
+</glyph>

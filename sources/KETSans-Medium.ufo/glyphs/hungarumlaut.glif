@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="hungarumlaut" format="2">
+  <advance width="738"/>
+  <unicode hex="02DD"/>
+  <outline>
+    <component base="hungarumlautcomb" xOffset="369"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>spacing hungarumlautcomb</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="minus" format="2">
+  <advance width="1307"/>
+  <unicode hex="2212"/>
+  <outline>
+    <contour>
+      <point x="214.0" y="568.0" type="line"/>
+      <point x="1094.0" y="568.0" type="line"/>
+      <point x="1094.0" y="743.0" type="line"/>
+      <point x="214.0" y="743.0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>plus bar</string>
+    </dict>
+  </lib>
+</glyph>

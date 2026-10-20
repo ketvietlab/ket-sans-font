@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="tilde" format="2">
+  <advance width="893"/>
+  <unicode hex="02DC"/>
+  <outline>
+    <component base="tildecomb" xOffset="446"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>vn.ketviet.construction</key>
+      <string>spacing tildecomb</string>
+    </dict>
+  </lib>
+</glyph>
