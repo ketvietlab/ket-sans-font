@@ -44,7 +44,7 @@
   "masters": {
     "Light": {
       "wght": 300,
-      "comment": "Light from the Regular -> Light change measured on SF Pro (opsz 17) and Inter (opsz 14) at 300/400 (rasters, x-height normalised; Helvetica Light sits near 200 and is left out). Unlike Bold, Light is not on the Regular -> Bold line: SF and Inter thin horizontals as much as verticals (contrast kept) and keep advances (x0.98-1.00), so the counters open. Strokes: stems x0.78 (cap stem x0.76, figure stem x0.77), round sides x0.77, round tops x0.78, arch x0.79, bars x0.77, e bar x0.79, diagonals x0.81; marks and punctuation thin with the stem (x0.78). Widths: Regular + g x (Light - Regular stem), g = SF/Inter mean per shape (n 0.55, m 0.65, o 0.5, c 0.7, e 0.4, a 0.8, d 0.65, s 0.75, r 0.85, t 1.0, f 1.0, v 0.8, w 0.4, x 0.55, y 0.85, z 0.6, k 1.3, H 0.8, N 0.55, M 0.75, U 0.65, J 0.6, K 1.2, E F 0.6, L 0.5, T 0.45, Z 0.6, B 0.75, P 0.9, R 0.95, D 0.55, O 0.5, G 0.55, C 0.4, S 0.7, A V 0.7, W 0.8, X 0.85, Y 0.7, figure 0.5); tabular advance x0.995. Sidebearings x1.06. Dots shrink less than stems (dot/stem x1.12), mark dots x1.05, mark width x0.94. Apertures as measured: c opens x1.11 (terminals x1.11), e x1.18 (lower terminal 0.485), figures and ? barely (terminalClose -0.005); C a s S keep their Regular cuts (G shares C's cut and stays, where SF/Inter open it x1.08).",
+      "comment": "Light from the Regular -> Light change measured on SF Pro (opsz 17) and Inter (opsz 14) at 300/400 (rasters, x-height normalised; Helvetica Light sits near 200 and is left out). Unlike Bold, Light is not on the Regular -> Bold line: SF and Inter thin horizontals as much as verticals (contrast kept) and keep advances (x0.98-1.00), so the counters open. Strokes: stems x0.78 (cap stem x0.76, figure stem x0.77), round sides x0.77, round tops x0.78, arch x0.79, bars x0.77, e bar x0.79, diagonals x0.81; marks and punctuation thin with the stem (x0.78). Widths: Regular + g x (Light - Regular stem), g = SF/Inter mean per shape (n 0.55, m 0.65, o 0.5, c 0.7, e 0.4, a 0.8, d 0.65, s 0.75, r 0.85, t 1.0, f 1.0, v 0.8, w 0.4, x 0.55, y 0.85, z 0.6, k 1.3, H 0.8, N 0.55, M 0.75, U 0.65, J 0.6, K 1.2, E F 0.6, L 0.5, T 0.45, Z 0.6, B 0.75, P 0.9, R 0.95, D 0.55, O 0.5, G 0.55, C 0.4, S 0.7, A V 0.7, W 0.8, X 0.85, Y 0.7, figure 0.5); tabular advance x0.995. Sidebearings x1.06. Dots shrink less than stems (dot/stem x1.12), mark dots x1.05, mark width x0.94. Apertures as measured: c opens x1.11 (terminals x1.11), e x1.18 (lower terminal 0.485), figures and ? barely (terminalClose -0.005); C a s S keep their Regular cuts (G shares C's cut and stays, where SF/Inter open it x1.08). Joins sit lower as on SF and Inter Light: bowl join 0.81, shoulder join 0.82, bowl crotch 0.575.",
       "stroke": {
         "stemUpper": 146,
         "stemLower": 142,
@@ -74,6 +74,9 @@
       },
       "shapes": {
         "dotDiameter": 1.478,
+        "archJoinOuter": 0.82,
+        "bowlJoinOuter": 0.81,
+        "bowlCrotch": 0.575,
         "markWidth": 0.94,
         "markDot": 1.113,
         "markDotCase": 1.05,
@@ -179,7 +182,7 @@
     },
     "Bold": {
       "wght": 700,
-      "comment": "Derived from Regular by the Regular→Bold change measured on SF Pro, Inter and Helvetica rasters (x-height units): stems ×1.62, round sides ×1.65, round tops and shoulders ×1.45, capital bars ×1.49, lowercase bars ×1.36, diagonals ×1.6, marks ×1.35. Body width = Regular + g × added stem weight, g per letter shape from the mean of SF and Inter (n 1.0, o 0.6, d 0.75, H 0.75, O 0.45 …). Sidebearings ×0.85.",
+      "comment": "Derived from Regular by the Regular→Bold change measured on SF Pro, Inter and Helvetica rasters (x-height units): stems ×1.62, round sides ×1.65, round tops and shoulders ×1.45, capital bars ×1.49, lowercase bars ×1.36, diagonals ×1.6, marks ×1.35. Body width = Regular + g × added stem weight, g per letter shape from the mean of SF and Inter (n 1.0, o 0.6, d 0.75, H 0.75, O 0.45 …). Sidebearings ×0.85. Joins: shoulder tangent 62° and crotch 0.60; the bowl keeps Regular's crotch, as SF, Helvetica and Inter keep theirs at 0.62 x-height in every weight.",
       "stroke": {
         "stemUpper": 312,
         "stemLower": 294,
@@ -209,8 +212,8 @@
       },
       "shapes": {
         "dotDiameter": 1.07,
-        "archCrotch": 0.62,
-        "bowlCrotch": 0.69,
+        "archCrotch": 0.6,
+        "archJoinAngle": 62,
         "markWidth": 1.15,
         "markDot": 0.86,
         "markDotCase": 0.81,
@@ -299,16 +302,16 @@
   "shapes": {
     "barUpperCenter": 0.51,
     "barLowerE": 0.462,
-    "archJoinOuter": 0.88,
-    "archCrotch": 0.65,
-    "archJoinAngle": 76,
-    "archCrotchAngle": 254,
+    "archJoinOuter": 0.83,
+    "archCrotch": 0.625,
+    "archJoinAngle": 66,
+    "archCrotchAngle": 265,
     "archApexX": 0.55,
     "archRightTangent": 0.66,
-    "bowlJoinOuter": 0.88,
-    "bowlCrotch": 0.72,
-    "bowlJoinAngle": 76,
-    "bowlCrotchAngle": 74,
+    "bowlJoinOuter": 0.83,
+    "bowlCrotch": 0.585,
+    "bowlJoinAngle": 64,
+    "bowlCrotchAngle": 82,
     "cTerminalUpper": 0.36,
     "cTerminalLower": 0.39,
     "eTerminalLower": 0.42,
@@ -326,7 +329,7 @@
     "markDot": 1.06,
     "markDotCase": 1.0,
     "terminalClose": 0.0,
-    "comment": "Ratios: bar heights are fractions of cap/x-height, join heights fractions of x-height, terminal cuts fractions of the bowl radius from its centre. a: aHookLeft is a fraction of the letter width, aBowlCorner of the bowl width, aBowlSlope is in degrees.",
+    "comment": "Ratios: bar heights are fractions of cap/x-height, join heights fractions of x-height, terminal cuts fractions of the bowl radius from its centre. a: aHookLeft is a fraction of the letter width, aBowlCorner of the bowl width, aBowlSlope is in degrees. Joins of the bowl (b d p q g) and the shoulder (n h m u r) follow SF Pro (opsz 17 and 28), Helvetica Neue and Inter of the same weight within 0.01 x-height at seven distances, 0.005-0.12 x-height from the stem edge (rasters): outer join 0.83 with a 64° (bowl) / 66° (shoulder) tangent, bowl crotch 0.585 and shoulder crotch 0.625 leaving at 82° / 265°. The bowl arms therefore swell to 1.3-1.6 stems at the stem and the counters stay oval; the earlier 0.88 / 76° / 0.72 made D-shaped counters.",
     "sExtremeUpper": 0.725,
     "sExtremeLower": 0.285,
     "sSpineAngle": 12,

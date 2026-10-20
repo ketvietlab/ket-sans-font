@@ -295,6 +295,22 @@ Những hình cần mắt người duyệt ở Phase 4a:
     Còn chờ mắt người: « ‹ cao 0.48 x-height, trong khi SF 0.78, Inter 0.84 (đặc điểm có sẵn từ
     Phase 3).
 
+17. Góp ý 20-10 ("chữ nhỏ thì không sao, nhưng khi lớn lên nhìn nó kỳ quá, do chữ g, b, d… nguyên họ
+    này làm cho font không đều"). Đo trên raster ở bảy khoảng cách tính từ mép stem, so với SF (opsz 17 và
+    28), Helvetica Neue và Inter cùng độ đậm. Số liệu Regular:
+    - nách bụng của KÉT ở 0.74 x-height, ba font kia ở 0.61–0.63;
+    - viền ngoài rời stem ở 0.89 x-height, ba font kia ở 0.84–0.87;
+    - tại mép stem, cánh bụng KÉT chỉ dày 0.94 stem, ba font kia loe ra 1.36–1.47.
+
+    Vì vậy counter là chữ D áp phẳng vào stem suốt 0.48 x-height, như chữ o dán cạnh stem. Vai n
+    cũng rời stem quá cao (0.90, ba font kia 0.84–0.86), nên vai dày và vuông khi sát stem.
+
+    Đã hạ nối ngoài về 0.83, hạ nách bụng về 0.585 (nách n 0.625), và đổi góc rời stem 76° → 64–66°,
+    góc rời nách 74° → 80–82°. Light và Bold có giá trị riêng. Đường viền giờ lệch ba font kia dưới
+    0.01 x-height ở mọi khoảng cách đo. Đổi theo: b d p q g, n m h u r, đ ₫ ħ þ ư ų, và a æ ą ª qua
+    móc a. Bề rộng và kerning giữ nguyên, cỡ 13–16 px gần như không đổi. FontBakery hết cảnh báo khía
+    14° (`outline_jaggy_segments`).
+
 Chưa kiểm: hiển thị trên Windows/ClearType (không có máy Windows) và Safari/WebKit (trình duyệt
 kiểm thử chỉ có Chromium).
 

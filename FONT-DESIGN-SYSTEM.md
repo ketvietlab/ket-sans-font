@@ -43,10 +43,18 @@ chút để chữ trông "vững chãi" (stem 182 so với 174), và x-height n�
    0.552. Counter đi theo mặt ngoài nên nét giữ 0.94 độ dày cạnh ở góc chéo, không thắt kiểu
    ngòi bút (bản trước 0.57/0.60 thắt còn 0.89). Khe mở khép như SF (c 0.39 x-height) và s có
    gáy thoải, nên chữ đọc thành khối tròn chứ không thành nét bút.
-3. **Vai có đo lường.** Vai và bụng rời stem ở trên cao và dốc (0.88 x-height, 76°). Counter
-   của n chạm stem ở 0.65 x-height, đúng chỗ SF, Inter, Be Vietnam Pro đặt (0.65–0.67), nên
-   counter tròn và khía rõ ở 11–13 px mà không có nêm xiên kiểu nét bút. Bản đầu dùng 0.835 / 62° /
-   0.60 và bị chê "lai viết tay"; bản kế đẩy nách lên 0.72 thì counter vuông, vai cứng.
+3. **Vai có đo lường.** Vai và bụng rời stem ở 0.83 x-height với tiếp tuyến 64–66°; nách bụng
+   ở 0.585, nách n ở 0.625, viền trong rời nách gần như dựng đứng (80–82°). Đo trên raster ở bảy
+   khoảng cách tính từ mép stem (0.005–0.12 x-height), viền ngoài và viền trong lệch SF, Helvetica Neue
+   và Inter dưới 0.01 x-height ở cả Light, Regular, Bold. Vì vậy cánh bụng loe dày khi vào stem
+   (1.3–1.6 stem, như ba font kia) và counter b d p q g là oval, chạm stem một đoạn ngắn.
+   Lịch sử:
+   - bản đầu dùng 0.835 / 62° / nách 0.60 và bị chê "lai viết tay";
+   - bản kế đẩy nối lên 0.88 / 76° và nách bụng lên 0.72. Counter thành chữ D, cánh mảnh đều tới
+     tận stem; ở cỡ tiêu đề, b d g q trông như chữ o dán cạnh stem (góp ý 20-10).
+
+   Bản này khớp đường viền chứ không khớp một điểm. Độ lệch tâm khối mực trên/dưới của n m h u
+   (thước đo "không thẳng") gần SF/Helvetica/Inter hơn bản 0.88, ví dụ n −0.025 so với −0.019…−0.023.
 4. **Dấu Việt chung một ngòi bút.** Mọi dấu dùng chung nét `markStroke` và chung độ căng với
    chữ. Sau dấu mũ, dấu sắc/huyền/hỏi đặt lệch phải với khoảng hở được giải ra cụ thể; dấu ngã
    và mọi dấu sau dấu trăng chồng dọc. Râu ơ ư là một gờ ngang uốn lên thành thân đứng, dày gần
@@ -81,10 +89,10 @@ Không glyph nào mang chi tiết trang trí riêng. Nhận diện đến từ t
 | Gáy s | Hai mép gáy rời điểm cực đứng của hai oval và qua tâm với góc 12°, cách nhau 0.92 cạnh s, độ căng 0.65. Đo trên raster gáy nghiêng 14°, như SF, Inter và Helvetica; bản trước 21° nên đọc thành một dải xéo. |
 | Counter | Counter dùng độ căng 0.58, theo sát mặt ngoài (0.59). Counter của số 0 dùng 0.60 để giữ độ mở trong khung hẹp. |
 | Oval | O, o, 0 là superellipse bốn điểm cực trị; khung trong lệch đúng độ dày cạnh/đỉnh. |
-| Vai (n h m r u) | Rời stem ở 0.88 x-height với tiếp tuyến 76°; đỉnh ngoài ở 0.55 bề rộng; cạnh phải dựng đứng từ 0.66 x-height. Nách ở 0.65 x-height, vào stem ở 254°. |
-| Bụng (b d p q) | Một nửa vòng nối stem như vai, đối xứng quanh x/2: nối ở 0.88/0.12 x-height với góc 76°, nách ở 0.72/0.28 với góc 74°. d là gốc; b = d lật ngang; q = bụng d + stem descender; p = q lật ngang. Bụng a có đỉnh thẳng dốc 3° tới 0.55 bề rộng bụng rồi vào một phần tư oval; đáy nối stem ở 0.15 x-height với góc 76°, viền trong rời stem theo phương đứng ở 0.36 x-height. |
+| Vai (n h m r u) | Rời stem ở 0.83 x-height (Light 0.82) với tiếp tuyến 66° (Bold 62°); đỉnh ngoài ở 0.55 bề rộng; cạnh phải dựng đứng từ 0.66 x-height. Nách ở 0.625 x-height (Bold 0.60), vào stem ở 265°. |
+| Bụng (b d p q) | Một nửa vòng nối stem như vai, đối xứng quanh x/2: nối ở 0.83/0.17 x-height (Light 0.81) với góc 64°, nách ở 0.585/0.415 (Light 0.575) với góc 82°. d là gốc; b = d lật ngang; q = bụng d + stem descender; p = q lật ngang. Bụng a có đỉnh thẳng dốc 3° tới 0.55 bề rộng bụng rồi vào một phần tư oval; đáy nối stem ở 0.15 x-height với góc 76°, viền trong rời stem theo phương đứng ở 0.36 x-height. |
 | Terminal | Cắt ngang (c e s a 2) hoặc dọc (r t 1). Không cắt xiên. |
-| Join | Mọi chỗ nối giữ khía ngoài rõ ràng (n tại 0.88 x); nách n ở 0.65 x, nách bụng d ở 0.72 x. Đỉnh bụng a gặp stem ở 0.615 x. |
+| Join | Mọi chỗ nối giữ khía ngoài rõ ràng (n tại 0.83 x, khía rộng 24–28°); nách n ở 0.625 x, nách bụng d ở 0.585 x. Đỉnh bụng a gặp stem ở 0.615 x. |
 | Stem alignment | Đỉnh stem phẳng đúng x-height, cap height hoặc ascender. Overshoot chỉ áp cho phần tròn. |
 | Curve tension | Xem bảng C ở mục 9. Đổi một giá trị tension sẽ đổi đồng loạt mọi glyph dùng nó. |
 
@@ -231,10 +239,10 @@ Medium — tương phản ngang/dọc: H 0.85, O 0.82, o 0.81, vai n 0.84. Bù q
 Bold — tương phản ngang/dọc: H 0.81, O 0.77, o 0.75, vai n 0.79. Bù quang học cạnh tròn: O +4.5% so với stem hoa, o +5.4% so với stem thường.
 
 
-Light: Light from the Regular -> Light change measured on SF Pro (opsz 17) and Inter (opsz 14) at 300/400 (rasters, x-height normalised; Helvetica Light sits near 200 and is left out). Unlike Bold, Light is not on the Regular -> Bold line: SF and Inter thin horizontals as much as verticals (contrast kept) and keep advances (x0.98-1.00), so the counters open. Strokes: stems x0.78 (cap stem x0.76, figure stem x0.77), round sides x0.77, round tops x0.78, arch x0.79, bars x0.77, e bar x0.79, diagonals x0.81; marks and punctuation thin with the stem (x0.78). Widths: Regular + g x (Light - Regular stem), g = SF/Inter mean per shape (n 0.55, m 0.65, o 0.5, c 0.7, e 0.4, a 0.8, d 0.65, s 0.75, r 0.85, t 1.0, f 1.0, v 0.8, w 0.4, x 0.55, y 0.85, z 0.6, k 1.3, H 0.8, N 0.55, M 0.75, U 0.65, J 0.6, K 1.2, E F 0.6, L 0.5, T 0.45, Z 0.6, B 0.75, P 0.9, R 0.95, D 0.55, O 0.5, G 0.55, C 0.4, S 0.7, A V 0.7, W 0.8, X 0.85, Y 0.7, figure 0.5); tabular advance x0.995. Sidebearings x1.06. Dots shrink less than stems (dot/stem x1.12), mark dots x1.05, mark width x0.94. Apertures as measured: c opens x1.11 (terminals x1.11), e x1.18 (lower terminal 0.485), figures and ? barely (terminalClose -0.005); C a s S keep their Regular cuts (G shares C's cut and stays, where SF/Inter open it x1.08).
+Light: Light from the Regular -> Light change measured on SF Pro (opsz 17) and Inter (opsz 14) at 300/400 (rasters, x-height normalised; Helvetica Light sits near 200 and is left out). Unlike Bold, Light is not on the Regular -> Bold line: SF and Inter thin horizontals as much as verticals (contrast kept) and keep advances (x0.98-1.00), so the counters open. Strokes: stems x0.78 (cap stem x0.76, figure stem x0.77), round sides x0.77, round tops x0.78, arch x0.79, bars x0.77, e bar x0.79, diagonals x0.81; marks and punctuation thin with the stem (x0.78). Widths: Regular + g x (Light - Regular stem), g = SF/Inter mean per shape (n 0.55, m 0.65, o 0.5, c 0.7, e 0.4, a 0.8, d 0.65, s 0.75, r 0.85, t 1.0, f 1.0, v 0.8, w 0.4, x 0.55, y 0.85, z 0.6, k 1.3, H 0.8, N 0.55, M 0.75, U 0.65, J 0.6, K 1.2, E F 0.6, L 0.5, T 0.45, Z 0.6, B 0.75, P 0.9, R 0.95, D 0.55, O 0.5, G 0.55, C 0.4, S 0.7, A V 0.7, W 0.8, X 0.85, Y 0.7, figure 0.5); tabular advance x0.995. Sidebearings x1.06. Dots shrink less than stems (dot/stem x1.12), mark dots x1.05, mark width x0.94. Apertures as measured: c opens x1.11 (terminals x1.11), e x1.18 (lower terminal 0.485), figures and ? barely (terminalClose -0.005); C a s S keep their Regular cuts (G shares C's cut and stays, where SF/Inter open it x1.08). Joins sit lower as on SF and Inter Light: bowl join 0.81, shoulder join 0.82, bowl crotch 0.575.
 
 
-Bold: Derived from Regular by the Regular→Bold change measured on SF Pro, Inter and Helvetica rasters (x-height units): stems ×1.62, round sides ×1.65, round tops and shoulders ×1.45, capital bars ×1.49, lowercase bars ×1.36, diagonals ×1.6, marks ×1.35. Body width = Regular + g × added stem weight, g per letter shape from the mean of SF and Inter (n 1.0, o 0.6, d 0.75, H 0.75, O 0.45 …). Sidebearings ×0.85.
+Bold: Derived from Regular by the Regular→Bold change measured on SF Pro, Inter and Helvetica rasters (x-height units): stems ×1.62, round sides ×1.65, round tops and shoulders ×1.45, capital bars ×1.49, lowercase bars ×1.36, diagonals ×1.6, marks ×1.35. Body width = Regular + g × added stem weight, g per letter shape from the mean of SF and Inter (n 1.0, o 0.6, d 0.75, H 0.75, O 0.45 …). Sidebearings ×0.85. Joins: shoulder tangent 62° and crotch 0.60; the bowl keeps Regular's crotch, as SF, Helvetica and Inter keep theirs at 0.62 x-height in every weight.
 
 
 Medium: Weights between the masters are interpolated from the masters' own parameters, not drawn: every stroke, shape, proportion, spacing and curve value is Regular + t (Bold - Regular) with t = (wght - 400) / (700 - 400), and the same recipes run on the result. SF and Inter put 500 at t 0.29-0.38 on every measured stroke, aperture and advance (rasters, x-height normalised), i.e. linear in wght, so Medium uses t = 1/3. Medium also serves CSS weight 600 (UI semibold): declare its face as font-weight 500 600, otherwise browsers pick Bold for 600. Strokes, widths and spacing round to whole units, shapes to 4 decimals.
@@ -261,16 +269,16 @@ Tension measured against the tangent intersection; 0.5523 is a true circle. Oute
 | --- | --- | --- | --- | --- |
 | barUpperCenter | = | 0.51 | = | = |
 | barLowerE | = | 0.462 | = | = |
-| archJoinOuter | = | 0.88 | = | = |
-| archCrotch | = | 0.65 | 0.64 | 0.62 |
-| archJoinAngle | = | 76 | = | = |
-| archCrotchAngle | = | 254 | = | = |
+| archJoinOuter | 0.82 | 0.83 | = | = |
+| archCrotch | = | 0.625 | 0.6167 | 0.6 |
+| archJoinAngle | = | 66 | 65 | 62 |
+| archCrotchAngle | = | 265 | = | = |
 | archApexX | = | 0.55 | = | = |
 | archRightTangent | = | 0.66 | = | = |
-| bowlJoinOuter | = | 0.88 | = | = |
-| bowlCrotch | = | 0.72 | 0.71 | 0.69 |
-| bowlJoinAngle | = | 76 | = | = |
-| bowlCrotchAngle | = | 74 | = | = |
+| bowlJoinOuter | 0.81 | 0.83 | = | = |
+| bowlCrotch | 0.575 | 0.585 | = | = |
+| bowlJoinAngle | = | 64 | = | = |
+| bowlCrotchAngle | = | 82 | = | = |
 | cTerminalUpper | 0.4 | 0.36 | 0.3293 | 0.268 |
 | cTerminalLower | 0.433 | 0.39 | 0.3567 | 0.29 |
 | eTerminalLower | 0.485 | 0.42 | 0.3943 | 0.343 |
@@ -313,7 +321,7 @@ Tension measured against the tangent intersection; 0.5523 is a true circle. Oute
 | HornRoot | = | 0.93 | = | = |
 
 
-Ratios: bar heights are fractions of cap/x-height, join heights fractions of x-height, terminal cuts fractions of the bowl radius from its centre. a: aHookLeft is a fraction of the letter width, aBowlCorner of the bowl width, aBowlSlope is in degrees.
+Ratios: bar heights are fractions of cap/x-height, join heights fractions of x-height, terminal cuts fractions of the bowl radius from its centre. a: aHookLeft is a fraction of the letter width, aBowlCorner of the bowl width, aBowlSlope is in degrees. Joins of the bowl (b d p q g) and the shoulder (n h m u r) follow SF Pro (opsz 17 and 28), Helvetica Neue and Inter of the same weight within 0.01 x-height at seven distances, 0.005-0.12 x-height from the stem edge (rasters): outer join 0.83 with a 64° (bowl) / 66° (shoulder) tangent, bowl crotch 0.585 and shoulder crotch 0.625 leaving at 82° / 265°. The bowl arms therefore swell to 1.3-1.6 stems at the stem and the counters stay oval; the earlier 0.88 / 76° / 0.72 made D-shaped counters.
 
 
 ### E. Proportions (bề rộng thân)
