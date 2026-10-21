@@ -616,7 +616,7 @@ và underline giống nhau ở mọi weight.
 `design-system.json` → `scripts/ketsans` → UFO3 (`sources/`) → fontmake (TTF và OTF chạy riêng,
 overlap gỡ bằng pathops, bộ lọc `ketsans.cleanup` bỏ điểm không mang hình, composite lồng được
 làm phẳng) → ttfautohint (TTF) → WOFF2. Timestamp
-được cố định nên hai lần build cho ra checksum giống hệt. Chi tiết ở [README](README.md).
+được cố định nên hai lần build cho ra checksum giống hệt. Chi tiết ở [tài liệu phát triển](DEVELOPMENT.md).
 
 ## 12. Optical spacing (0.301)
 
