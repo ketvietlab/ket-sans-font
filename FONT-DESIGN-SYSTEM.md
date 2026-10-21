@@ -1,6 +1,6 @@
 # KÉT Sans — Font Design System
 
-Phiên bản 0.300 · Phase 1 (Foundation) + Phase 2 (Core glyphs) + Phase 4a (GF Latin Core +
+Phiên bản 1.000 · Phase 1 (Foundation) + Phase 2 (Core glyphs) + Phase 4a (GF Latin Core +
 tiếng Việt + ₫) + Phase 4b (Light, Regular, Medium, Bold).
 
 Nguồn sự thật duy nhất là [`design-system.json`](design-system.json). Mọi glyph được sinh từ các
@@ -528,7 +528,7 @@ Bold
 | --- | --- |
 | Grid-cut terminals | Every terminal is cut exactly horizontal (c, e, s, a, 2) or exactly vertical (r, t, 1). No diagonal or rounded ends. |
 | Full round | Bowls use tension 0.59 outside and 0.58 inside (circle = 0.552): the counter follows the outline, so the stroke keeps 0.94 of its side weight at the diagonals; apertures close like SF (c 0.39 x-height) and s has a shallow spine, so letters read as round forms, not pen strokes. |
-| Measured shoulder | Shoulders and bowls leave the stem high and steep (0.88 x-height, 76°); the n counter meets the stem at 0.65 x-height, where SF, Inter and Be Vietnam Pro put it (0.65–0.67), so the counter stays round and the notch reads at 11–13 px without a pen-like wedge. |
+| Measured shoulder | Regular bowls and shoulders join the stem at 0.83 x-height, with 64° and 66° tangents respectively. Bowl and shoulder crotches are 0.585 and 0.625 x-height. Light and Bold apply their master overrides. These rounded joins replace the earlier D-shaped counters; optical spacing translates whole glyphs without changing these shapes. |
 | Vietnamese marks drawn in the same pen | Marks share one stroke (markStroke 158) and the full-round curve and sit 152 units over the x-height; after a circumflex the acute, grave and hook rise from 92 % of its height on its upper right with a solved 44-unit clearance; the horn is a level shelf turning into an upright stub cut horizontally at 1.24 x-height. |
 
 <!-- GENERATED:END -->
@@ -536,8 +536,8 @@ Bold
 ## 10. Weights (Phase 4b)
 
 Family có bốn độ đậm. Light (300), Regular (400) và Bold (700) là master dựng từ JSON. Medium (500)
-là instance nội suy và cũng dùng cho chữ 600 của giao diện. ExtraBold, SemiBold riêng và variable
-font chưa dựng.
+là instance nội suy và cũng dùng cho chữ 600 của giao diện. ExtraBold, SemiBold riêng và trục
+weight biến thiên chưa dựng. Bản 0.301 có bốn font riêng với trục `opsz` chỉ đổi spacing.
 
 **Master.** Mỗi master có `stroke` riêng trong `masters.<tên>` và có thể ghi đè `shapes`,
 `proportions`, `spacing`, `curves`; `System._layer` gộp giá trị chung với phần ghi đè. Mọi master
@@ -608,7 +608,8 @@ và underline giống nhau ở mọi weight.
 - Dấu trên chữ hoa của Medium và Bold dẹt hơn SF, vì chồng dấu phải nằm trong 1 em.
 - Source giữ các contour dựng hình chồng lên nhau, nhưng vài glyph được gộp outline ngay trong
   recipe khi cần: `untangled` cho offset tự gập, `united` cho § khi phép gộp một lần thất bại. Vì
-  thế tương thích điểm giữa các master chưa được kiểm, và chưa có variable font.
+  thế tương thích điểm giữa các weight chưa được kiểm. Font optical chỉ nội suy giữa hai
+  bản spacing của cùng một weight; contour được gộp một lần rồi dịch ngang, giữ tương thích điểm.
 
 ## 11. Font engineering
 
@@ -616,3 +617,44 @@ và underline giống nhau ở mọi weight.
 overlap gỡ bằng pathops, bộ lọc `ketsans.cleanup` bỏ điểm không mang hình, composite lồng được
 làm phẳng) → ttfautohint (TTF) → WOFF2. Timestamp
 được cố định nên hai lần build cho ra checksum giống hệt. Chi tiết ở [README](README.md).
+
+## 12. Optical spacing (0.301)
+
+Nguồn tham số: `opticalSizing` trong `design-system.json`. Bốn tệp
+`fonts/variable/KETSansOptical-{Light,Regular,Medium,Bold}.{ttf,woff2}` có cùng trục
+`opsz`, không có `wght`. Tọa độ 8–16 giữ nguyên spacing Text; 16–48 thu dần;
+48–72 giữ spacing Display. `avar` ánh xạ lịch này. Trình duyệt/ứng dụng chọn
+tọa độ qua optical sizing; point của `opsz` không phải cam kết ánh xạ px trên mọi nền tảng.
+
+Ở đầu Display, khoảng trắng dương bên thân chữ thường giữ 80%, nhóm `o c e` giữ 74%;
+chữ hoa giữ 82%, nhóm `O C G Q` giữ 76%; dấu câu giữ 92%. Bearing âm được giữ.
+Chữ có dấu kế thừa mức giảm của chữ nền; các component và anchor dịch bù để dấu bám
+đúng thân. Hình glyph, độ dày nét và khoảng cách dấu–thân không đổi.
+Space còn 472 units. Số, tiền tệ và toán tabular cùng giảm advance 64 units và dịch
+32 units để giữ thẳng cột. Các con số này là lựa chọn thiết kế của KÉT.
+
+Sau spacing, mọi cặp ký tự letter/punctuation được quét trên profile outline của
+KÉT (bước dọc 4 units, 32 đoạn mỗi đường cong). Ngoại lệ kerning giữ khe ít nhất 60 units nếu Text đã đủ chỗ; khe Text nhỏ hơn
+được giữ ít nhất bằng Text. Những chỗ chạm đã có ở Text không bị làm nặng thêm.
+Quy tắc này bao gồm các cặp vốn không có kerning, như `Fĩ`, dấu ngoặc và chữ có dấu.
+
+Build sinh hai UFO và designspace tạm ở `build/optical-sources`, gộp outline Text
+một lần, rồi dịch chính contour đó cho Display để tránh sai khác làm tròn khi gộp
+hai lần. fontmake biên dịch `gvar`, `HVAR` và GPOS biến thiên. Các bảng STAT/name giữ
+weight cố định của từng tệp. Optical chưa có hint căn nét; chỉ có smart dropout
+cho bộ raster đơn sắc. Bản tĩnh có ttfautohint vẫn được đóng gói kèm theo.
+
+Kiểm bằng `scripts/verify_optical.py`. Script đo độc lập và ảnh so sánh của phiên review được lưu cục bộ, không nằm trong gói phát hành.
+NFC/GPOS NFD phải trùng pixel; chỉ cho phép tối đa 6 pixel tại chỗ gộp cedilla/ogonek
+ở phép raster nhị phân 96px, vì đường cong ghép được xấp xỉ lại và pha pixel thay đổi.
+Mọi glyph được kiểm riêng để xác nhận chỉ dịch ngang qua bảy tọa độ `opsz`.
+
+**FontBakery 1.1.0 và font chỉ có `opsz`.** Chạy universal riêng từng thư mục:
+`fonts/ttf`, `fonts/otf`, `fonts/variable`; không trộn font tĩnh/optical hoặc TTF/OTF
+trong một lần kiểm family. Optical còn 5 kết quả FAIL của ba check:
+`opentype/fvar/regular_coords_correct` đòi instance tên “Regular” ở Light/Medium/Bold;
+`opentype/fsselection` và `opentype/mac_style` suy Bold thành Regular vì helper
+`Font.style` chỉ xét default của trục `wght`, trong khi các tệp này chỉ có `opsz`.
+Đối chiếu riêng trong `verify_optical.py`: weight class, tên và cờ Bold/Regular
+khớp font tĩnh; named instances giữ đúng weight với tọa độ Text 16 / Display 48.
+Giữ nguyên các FAIL trong báo cáo gốc, không tắt check và không coi universal là sạch.

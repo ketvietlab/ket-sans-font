@@ -3,7 +3,7 @@
     "brandName": "KÉT Sans",
     "familyName": "KET Sans",
     "postscriptFamily": "KETSans",
-    "version": "0.300",
+    "version": "1.000",
     "phase": "Phase 4b — Latin Core + Vietnamese, Light, Regular, Medium and Bold",
     "vendorID": "KETV",
     "designer": "Két Việt",
@@ -420,6 +420,29 @@
     "lowerHook": 24,
     "comment": "Sidebearings by edge shape. Round = 0.63 x straight, diagonal = 0.1 x straight; terminals sit between. Bowls 0.57 x straight, open arms/bars/hooks by the white they enclose."
   },
+  "opticalSizing": {
+    "comment": "Spacing-only opsz at each of the four fixed weights. Values are optical-size coordinates (points); browser auto mapping is tested separately. Text spacing is unchanged through 16; full Display spacing at 48 and above. No outline scaling or stroke changes.",
+    "axis": {
+      "minimum": 8,
+      "default": 16,
+      "display": 48,
+      "maximum": 72,
+      "map": [[8, 8], [16, 16], [32, 44], [48, 72], [72, 72]]
+    },
+    "display": {
+      "lowerSidebearingScale": 0.8,
+      "lowerRoundSidebearingScale": 0.74,
+      "lowerRoundLetters": "oce",
+      "upperSidebearingScale": 0.82,
+      "upperRoundSidebearingScale": 0.76,
+      "upperRoundLetters": "OCGQ",
+      "punctuationSidebearingScale": 0.92,
+      "minimumPairGap": 60,
+      "spaceAdvance": 472,
+      "tabularAdvanceReduction": 64,
+      "tabularCharacters": "0123456789$¢£¥€₫#+−×÷=<>"
+    }
+  },
   "identity": [
     {
       "trait": "Grid-cut terminals",
@@ -431,7 +454,7 @@
     },
     {
       "trait": "Measured shoulder",
-      "rule": "Shoulders and bowls leave the stem high and steep (0.88 x-height, 76°); the n counter meets the stem at 0.65 x-height, where SF, Inter and Be Vietnam Pro put it (0.65–0.67), so the counter stays round and the notch reads at 11–13 px without a pen-like wedge."
+      "rule": "Regular bowls and shoulders join the stem at 0.83 x-height, with 64° and 66° tangents respectively. Bowl and shoulder crotches are 0.585 and 0.625 x-height. Light and Bold apply their master overrides. These rounded joins replace the earlier D-shaped counters; optical spacing translates whole glyphs without changing these shapes."
     },
     {
       "trait": "Vietnamese marks drawn in the same pen",

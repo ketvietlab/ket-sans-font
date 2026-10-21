@@ -4,7 +4,7 @@
 
 Writes build/dist/KETSans-<version>.zip:
 
-    KETSans-<version>/LICENSE.txt, README.txt, OTF/, TTF/, WOFF2/
+    KETSans-<version>/LICENSE.txt, README.txt, OTF/, TTF/, WOFF2/, Optical/
 
 Entries are sorted and stamped with the build's SOURCE_DATE_EPOCH, so the
 same fonts give the same zip.  Sources stay out: the font is free to use,
@@ -35,7 +35,11 @@ def main() -> None:
     for folder, ext in FORMATS.items():
         for path in sorted((ROOT / "fonts" / ext).glob(f"*.{ext}")):
             files[f"{top}/{folder}/{path.name}"] = path.read_bytes()
-    assert sum(name.endswith((".otf", ".ttf", ".woff2")) for name in files) == 12, "build all four weights first"
+    for style in load().masters:
+        for ext in ("ttf", "woff2"):
+            path = ROOT / "fonts" / "variable" / f"KETSansOptical-{style}.{ext}"
+            files[f"{top}/Optical/{path.name}"] = path.read_bytes()
+    assert sum(name.endswith((".otf", ".ttf", ".woff2")) for name in files) == 20, "build all four weights and optical fonts first"
     out = ROOT / "build" / "dist" / f"{top}.zip"
     out.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:

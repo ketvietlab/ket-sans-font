@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "KÉT Sans";
-  src: url("../fonts/woff2/KETSans-Light.woff2") format("woff2");
+  src: url("../fonts/variable/KETSansOptical-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: block;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "KÉT Sans";
-  src: url("../fonts/woff2/KETSans-Regular.woff2") format("woff2");
+  src: url("../fonts/variable/KETSansOptical-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: block;
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: "KÉT Sans";
-  src: url("../fonts/woff2/KETSans-Medium.woff2") format("woff2");
+  src: url("../fonts/variable/KETSansOptical-Medium.woff2") format("woff2");
   font-weight: 500 600; /* Medium also renders UI semibold (600); without the range 600 picks Bold */
   font-style: normal;
   font-display: block;
@@ -26,11 +26,13 @@
 
 @font-face {
   font-family: "KÉT Sans";
-  src: url("../fonts/woff2/KETSans-Bold.woff2") format("woff2");
+  src: url("../fonts/variable/KETSansOptical-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: block;
 }
+
+html { font-optical-sizing: auto; }
 
 /* Reference fonts, rasterised side by side only. */
 @font-face {

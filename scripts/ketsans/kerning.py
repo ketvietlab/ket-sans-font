@@ -156,25 +156,25 @@ def build(glyphs: dict[str, Glyph]) -> tuple[dict, dict]:
 YS = np.arange(-520, 2100, 16) + 0.5
 
 
-def _polys(name, glyphs, dx=0.0, dy=0.0):
+def _polys(name, glyphs, dx=0.0, dy=0.0, steps=12):
     g = glyphs[name]
     out = []
     for c in g.contours:
         pts = []
         for seg in c.beziers():
-            pts += flatten(seg, 12)[:-1] if len(seg) == 4 else [seg[0]]
+            pts += flatten(seg, steps)[:-1] if len(seg) == 4 else [seg[0]]
         out.append(np.array(pts) + (dx, dy))
     for base, cx, cy in g.components:
-        out += _polys(base, glyphs, dx + cx, dy + cy)
+        out += _polys(base, glyphs, dx + cx, dy + cy, steps)
     return out
 
 
-def _profile(name, glyphs):
+def _profile(name, glyphs, ys=YS, steps=12):
     """Leftmost / rightmost ink at every sampled height (inf where empty)."""
-    left = np.full(len(YS), np.inf)
-    right = np.full(len(YS), -np.inf)
-    Y = YS[None, :]
-    for P in _polys(name, glyphs):
+    left = np.full(len(ys), np.inf)
+    right = np.full(len(ys), -np.inf)
+    Y = ys[None, :]
+    for P in _polys(name, glyphs, steps=steps):
         Q = np.roll(P, -1, axis=0)
         x0, y0, x1, y1 = P[:, :1], P[:, 1:], Q[:, :1], Q[:, 1:]
         mask = ((y0 <= Y) & (Y < y1)) | ((y1 <= Y) & (Y < y0))
@@ -210,3 +210,41 @@ def collision_exceptions(glyphs, groups, kerning) -> dict:
                     # May turn positive: T + ĩ collide even unkerned.
                     out[(a, b)] = int(np.ceil(value + MIN_GAP - gap))
     return out
+
+
+def optical_exceptions(text, display, groups, text_kerning, display_kerning, minimum_gap):
+    """Do not introduce or worsen collisions as spacing tightens.
+
+    Inspect every encoded letter/punctuation pair, including pairs with no
+    Text kerning (Fĩ, brackets + accented capitals, f/, etc.). Existing narrow
+    gaps stay at least as wide as Text; otherwise retain minimum_gap. The
+    geometry only translates, so endpoint safety also covers interpolation.
+    """
+    names = [name for name, glyph in text.items() if glyph.unicodes and glyph.width
+             and unicodedata.category(chr(glyph.unicodes[0]))[0] in "LP"]
+    left_groups = {name: group for group, members in groups.items()
+                   if group.startswith("public.kern1.") for name in members}
+    right_groups = {name: group for group, members in groups.items()
+                    if group.startswith("public.kern2.") for name in members}
+
+    def value(a, b, table):
+        left, right = left_groups.get(a, a), right_groups.get(b, b)
+        return table.get((a, b), table.get((a, right), table.get((left, b), table.get((left, right), 0))))
+
+    # Fine sampling catches a narrow tilde/brace meeting (ĩ}) that the static
+    # 16-unit profile can miss. Keep the static builder's existing resolution.
+    ys = np.arange(-520, 2100, 4) + 0.5
+    before = {name: _profile(name, text, ys, 32) for name in names}
+    after = {name: _profile(name, display, ys, 32) for name in names}
+    result = {}
+    for a in names:
+        for b in names:
+            ok = np.isfinite(before[a][1]) & np.isfinite(before[b][0])
+            if not ok.any():
+                continue
+            original = (text[a].width + before[b][0][ok] - before[a][1][ok]).min() + value(a, b, text_kerning)
+            current = (display[a].width + after[b][0][ok] - after[a][1][ok]).min() + value(a, b, display_kerning)
+            floor = min(minimum_gap, original)
+            if current < floor - 1e-6:
+                result[(a, b)] = value(a, b, display_kerning) + int(np.ceil(floor - current))
+    return result

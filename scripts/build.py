@@ -11,11 +11,14 @@
 4. fontTools           -> WOFF2 from the hinted TTF
 5. win metrics from the real glyph bounds of the whole family (the same in
    every weight), fixed timestamps (reproducible)
+6. Text/Display spacing -> one opsz-only TTF/WOFF2 per fixed weight; static
+   hinted fonts remain available alongside the optical files
 """
 
 from __future__ import annotations
 
 import os
+from copy import deepcopy
 import shutil
 import subprocess
 import sys
@@ -23,7 +26,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from fontTools.ttLib import TTFont  # noqa: E402
+from fontTools.ttLib import TTFont, newTable  # noqa: E402
+from fontTools.ttLib.tables.ttProgram import Program  # noqa: E402
+from fontTools.designspaceLib import DesignSpaceDocument  # noqa: E402
+from fontTools.otlLib.builder import buildStatTable  # noqa: E402
 
 from ketsans import master  # noqa: E402
 from ketsans.system import ROOT, load  # noqa: E402
@@ -57,6 +63,7 @@ def main() -> None:
     y_max, y_min = max(h.yMax for h in heads), min(h.yMin for h in heads)
     for style in styles:
         finish_master(style, *raw[style], y_max, y_min)
+        build_optical(style, y_max, y_min)
     run([sys.executable, ROOT / "scripts" / "specimen_data.py"])
     run([sys.executable, ROOT / "scripts" / "document.py"])
 
@@ -129,6 +136,98 @@ def finish_master(style: str, raw_ttf: Path, raw_otf: Path, y_max: int, y_min: i
     f.save(woff2)
     for p in (ttf, otf, woff2):
         print(f"{p.relative_to(ROOT)}  {p.stat().st_size:,} bytes")
+
+
+def build_optical(style: str, y_max: int, y_min: int) -> None:
+    """One opsz-only variable font per weight; no cross-weight interpolation.
+
+    These fonts are unhinted. Keep the existing hinted static TTF/WOFF2 set for
+    clients which need it. Optical masters translate whole glyphs, so outline
+    topology remains identical within each designspace.
+    """
+    system = load(style)
+    settings = system.raw["opticalSizing"]["axis"]
+    family = system.meta.postscriptFamily + "Optical"
+    source_dir = ROOT / "build" / "optical-sources"
+    source_dir.mkdir(parents=True, exist_ok=True)
+    ds = DesignSpaceDocument()
+    ds.addAxisDescriptor(
+        name="Optical Size", tag="opsz", minimum=settings["minimum"],
+        default=settings["default"], maximum=settings["maximum"],
+        map=[tuple(pair) for pair in settings["map"]],
+    )
+    for label, coord in (("Text", settings["default"]), ("Display", settings["maximum"])):
+        path = source_dir / f"{family}-{style}-{label}.ufo"
+        font, glyphs = master.write(path, style, optical=label)
+        # Union once, then translate the same contours at Display. Independent
+        # pathops unions can choose different start points or round a joined
+        # cedilla/ogonek differently, even for translated input.
+        from ufo2ft.filters.removeOverlaps import RemoveOverlapsFilter
+        from ketsans.cleanup import CleanupFilter
+        from ketsans.optical import display_spacing
+
+        if label == "Text":
+            reductions = display_spacing(glyphs, system)
+            RemoveOverlapsFilter(backend="pathops")(font)
+            CleanupFilter()(font)
+            text_font = font
+        else:
+            for glyph in font:
+                glyph.clearContours()
+                for source in text_font[glyph.name].contours:
+                    contour = deepcopy(source)
+                    for point in contour.points:
+                        point.x -= reductions[glyph.name][0]
+                    glyph.appendContour(contour)
+        font.save(path, overwrite=True)
+        ds.addSourceDescriptor(
+            path=str(path), name=f"{style} {label}",
+            familyName=system.meta.familyName + " Optical", styleName=style,
+            location={"Optical Size": coord},
+            copyInfo=label == "Text", copyLib=label == "Text",
+            copyFeatures=label == "Text",
+        )
+        ds.addInstanceDescriptor(
+            name=f"{style} {label}", familyName=system.meta.familyName + " Optical",
+            styleName=style if label == "Text" else style + " Display",
+            userLocation={"Optical Size": settings["default"] if label == "Text" else settings["display"]},
+        )
+    ds_path = source_dir / f"{family}-{style}.designspace"
+    ds.write(ds_path)
+    dest = ROOT / "fonts" / "variable"
+    dest.mkdir(parents=True, exist_ok=True)
+    ttf = dest / f"{family}-{style}.ttf"
+    run([
+        VENV_BIN / "fontmake", "-m", ds_path, "-o", "variable",
+        "--output-path", ttf, "--overlaps-backend", "pathops",
+        "--filter", "ketsans.cleanup::CleanupFilter", "--flatten-components",
+        "--verbose", "WARNING",
+    ], env=dict(os.environ, SOURCE_DATE_EPOCH=SOURCE_DATE_EPOCH, PYTHONPATH=str(ROOT / "scripts")), cwd=ROOT)
+    fix_metrics(ttf, y_max, y_min)
+    font = TTFont(ttf, recalcTimestamp=False)
+    # Static weight axis in STAT helps applications group the four opsz files.
+    buildStatTable(font, [
+        {"tag": "wght", "name": "Weight", "ordering": 0,
+         "values": [{"value": system.wght, "name": style, "flags": 2 if style == "Regular" else 0}]},
+        {"tag": "opsz", "name": "Optical Size", "ordering": 1,
+         "values": [
+             {"nominalValue": settings["default"], "rangeMinValue": settings["minimum"],
+              "rangeMaxValue": settings["default"], "name": "Text", "flags": 2},
+             {"value": settings["display"], "name": "Display"},
+         ]},
+    ], macNames=False)
+    # Smart dropout for monochrome rasterizers, not stem/grid hinting.
+    font["prep"] = newTable("prep")
+    font["prep"].program = Program()
+    font["prep"].program.fromAssembly(["PUSHW[ ]", "511", "SCANCTRL[ ]", "PUSHB[ ]", "4", "SCANTYPE[ ]"])
+    font["maxp"].maxStackElements = max(font["maxp"].maxStackElements, 1)
+    font["head"].modified = font["head"].created
+    font.save(ttf, reorderTables=True)
+    font.flavor = "woff2"
+    woff2 = ttf.with_suffix(".woff2")
+    font.save(woff2)
+    for path in (ttf, woff2):
+        print(f"{path.relative_to(ROOT)}  {path.stat().st_size:,} bytes")
 
 
 if __name__ == "__main__":

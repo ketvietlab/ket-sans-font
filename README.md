@@ -2,14 +2,20 @@
 
 Typeface thương hiệu của Két Việt: neo-grotesque trung tính cho giao diện tiếng Việt.
 
-**Trạng thái: Phase 4b.** Đủ bảng chữ GF Latin Core + tiếng Việt + ₫ ở bốn độ đậm: Light (300),
+**Phát hành: 1.0 (`v1.0.0`, font version `1.000`).** Đủ bảng chữ GF Latin Core + tiếng Việt + ₫ ở bốn độ đậm: Light (300),
 Regular (400), Medium (500) và Bold (700). Bold và Light được dựng theo yêu cầu ngày 20-10. Medium là instance nội suy và
 cũng dùng cho chữ 600 của giao diện ([Dùng trên web](#dùng-trên-web)). Diễn biến ngày 20-10:
 - góp ý "font 600 quá đậm": khi đó trình duyệt lấy Bold cho chữ 600;
 - tui thêm một SemiBold nội suy;
 - góp ý tiếp: thay bản 600 đó bằng 500 và cho chữ 600 dùng 500.
 
-Cả bộ đang chờ duyệt. ExtraBold và SemiBold riêng chưa dựng.
+**1.0: optical spacing.** Có thêm bốn font `KET Sans Optical`, mỗi font giữ một độ đậm
+và có trục `opsz` 8–72. Spacing Text giữ nguyên qua tọa độ 16; thu dần đến Display ở 48,
+giữ ổn định đến 72. Chỉ dịch toàn bộ glyph và giảm advance/sidebearing, không bóp ngang
+hay đổi nét. Font tĩnh có hint vẫn nằm trong `fonts/ttf`, `fonts/otf`, `fonts/woff2`.
+Font optical nằm ở `fonts/variable` (TTF và WOFF2); chưa có hint căn nét lên lưới.
+
+Bản 1.0 được phát hành với các giới hạn kiểm chứng ghi trong [release notes](RELEASE-NOTES.md). ExtraBold và SemiBold riêng chưa dựng.
 
 - Hệ thống thiết kế: [FONT-DESIGN-SYSTEM.md](FONT-DESIGN-SYSTEM.md)
 - Thông số (nguồn sự thật duy nhất): [design-system.json](design-system.json)
@@ -17,14 +23,14 @@ Cả bộ đang chờ duyệt. ExtraBold và SemiBold riêng chưa dựng.
 - Specimen: [specimen/index.html](specimen/index.html)
 - Giấy phép: [LICENSE.txt](LICENSE.txt). Freeware độc quyền như SF Pro, không phải open source: ai cũng
   được tải và dùng miễn phí, kể cả cho thương mại và nhúng vào web, app hay PDF, nhưng không được sửa
-  hoặc phân phối lại file font. Gói tải về chỉ chứa font, license và README; source ở repo này không phát hành.
+  hoặc phân phối lại file font. Gói tải về chỉ chứa font, license và README; source được công khai tại repo này; không đồng nghĩa với giấy phép open source.
 
-## Có gì trong Phase 4b
+## Có gì trong 1.0
 
 | | |
 | --- | --- |
 | Độ đậm | Light 300, Regular 400 và Bold 700 là master; Medium 500 là instance nội suy ở 1/3 quãng Regular → Bold, dùng cho cả 500 và 600 ([mục 10](FONT-DESIGN-SYSTEM.md#10-weights-phase-4b)) |
-| Bảng chữ | 419 codepoint, 449 glyph: A–Z, a–z, Æ Œ Ø Ð Þ Ł Ħ ẞ, ı ȷ ß æ œ ø ð þ ħ ł ª º, số 0–9, dấu câu, tiền tệ `$ ¢ £ ¥ € ₫`, toán `+ − × ÷ = < > ~ ^`, `° © ® ™ § ¶ @ & #` |
+| Bảng chữ | 419 codepoint, 450 glyph nguồn (451 glyph trong font đã build, gồm glyph phụ do compiler sinh): A–Z, a–z, Æ Œ Ø Ð Þ Ł Ħ ẞ, ı ȷ ß æ œ ø ð þ ħ ł ª º, số 0–9, dấu câu, tiền tệ `$ ¢ £ ¥ € ₫`, toán `+ − × ÷ = < > ~ ^`, `° © ® ™ § ¶ @ & #` |
 | Dấu | 18 dấu kết hợp, 12 dấu `.case`, `caroncomb.alt` (caron dạng phẩy cho ď ľ ť Ľ), 8 cặp dấu chồng tiếng Việt (mỗi cặp có `.case`), 13 dấu đứng riêng (´ ¨ ˆ ˜ …) |
 | Chữ dựng sẵn | 241 chữ có dạng tách NFD: 132 chữ Việt có dấu và các chữ Latin Core (Ą Č Ğ Ő Ș Ţ Ź …). Composite đặt theo anchor; cedilla và ogonek được hợp vào outline. đ Đ Ł Ø… vẽ riêng |
 | OpenType | `ccmp` (i/j → ı/ȷ, dấu `.case`, cặp dấu Việt, ghép râu, caron dạng phẩy, cedilla thành phẩy dưới ở Ģ Ķ Ļ Ņ ķ ļ ņ và phẩy ngược trên ģ), `mark`/`mkmk` sinh từ anchor, `kern` theo nhóm hình dạng |
@@ -32,7 +38,7 @@ Cả bộ đang chờ duyệt. ExtraBold và SemiBold riêng chưa dựng.
 | Định dạng | `fonts/ttf` (hint bằng ttfautohint), `fonts/otf` (CFF), `fonts/woff2` (~20 KB mỗi weight) |
 | Source | `sources/KETSans-{Light,Regular,Medium,Bold}.ufo` (UFO3, sinh từ hệ thống, mở được bằng mọi trình sửa font) |
 
-Chưa có: ExtraBold, SemiBold riêng, variable font, số proportional (`pnum`), phân số, số mũ, mũi tên, Latin
+Chưa có: ExtraBold, SemiBold riêng, trục weight biến thiên (`wght`), số proportional (`pnum`), phân số, số mũ, mũi tên, Latin
 mở rộng ngoài Core, Hy Lạp/Cyrillic. Specimen tô màu mọi ký tự ngoài bảng chữ để không nhầm với
 KÉT Sans.
 
@@ -43,10 +49,12 @@ uv venv .venv --python 3.12
 uv pip install --python .venv/bin/python -r requirements.txt
 .venv/bin/python scripts/build.py     # JSON → UFO → TTF/OTF/WOFF2 → specimen data → bảng tài liệu
 .venv/bin/python scripts/verify.py    # kiểm thử cấu trúc, kiểu chữ, tiếng Việt, tài liệu
+.venv/bin/python scripts/verify_optical.py # opsz, outlines, HVAR, GPOS, dấu ghép, OTS
 .venv/bin/python scripts/package.py   # gói tải về: build/dist/KETSans-<version>.zip
 ```
 
-Gói zip chứa `LICENSE.txt`, `README.txt` (từ `package/README.txt`) và các thư mục `OTF/`, `TTF/`, `WOFF2/`.
+Gói zip chứa `LICENSE.txt`, `README.txt` (từ `package/README.txt`) và các thư mục
+`OTF/`, `TTF/`, `WOFF2/` (font tĩnh), `Optical/` (bốn TTF và bốn WOFF2 có `opsz`).
 Gói cũng tái lập được: các mục được sắp thứ tự và đóng dấu cùng `SOURCE_DATE_EPOCH` với bản build.
 
 Build tái lập được: cùng source thì cho cùng checksum, vì `SOURCE_DATE_EPOCH` được cố định và
@@ -71,13 +79,19 @@ Medium gánh cả weight 500 và 600. Face của nó phải khai báo dải `500
 lấy Bold cho chữ 600, vì theo luật chọn weight của CSS, với 600 nó tìm face nặng hơn trước.
 
 ```css
-@font-face { font-family: "KÉT Sans"; src: url(KETSans-Light.woff2) format("woff2"); font-weight: 300; }
-@font-face { font-family: "KÉT Sans"; src: url(KETSans-Regular.woff2) format("woff2"); font-weight: 400; }
-@font-face { font-family: "KÉT Sans"; src: url(KETSans-Medium.woff2) format("woff2"); font-weight: 500 600; }
-@font-face { font-family: "KÉT Sans"; src: url(KETSans-Bold.woff2) format("woff2"); font-weight: 700; }
+@font-face { font-family: "KÉT Sans"; src: url(Optical/KETSansOptical-Light.woff2) format("woff2"); font-weight: 300; }
+@font-face { font-family: "KÉT Sans"; src: url(Optical/KETSansOptical-Regular.woff2) format("woff2"); font-weight: 400; }
+@font-face { font-family: "KÉT Sans"; src: url(Optical/KETSansOptical-Medium.woff2) format("woff2"); font-weight: 500 600; }
+@font-face { font-family: "KÉT Sans"; src: url(Optical/KETSansOptical-Bold.woff2) format("woff2"); font-weight: 700; }
+html { font-optical-sizing: auto; }
 ```
 
 Chữ đặt 800–900 dùng Bold cho tới khi có ExtraBold; 100–200 dùng Light.
+
+Không cần thêm `letter-spacing` âm. `font-optical-sizing: none` dùng spacing Text.
+Ứng dụng phải hỗ trợ optical sizing để tự chọn theo cỡ chữ; không giả định tọa độ
+`opsz` (point) luôn bằng số px trên mọi nền tảng. Bản tĩnh trong `WOFF2/` vẫn dùng
+được với cùng cấu hình weight, nhưng không tự siết spacing.
 
 ## Cấu trúc
 
@@ -166,9 +180,9 @@ Ba câu hỏi Phase 3 chưa được chốt. Phase 4a/4b tạm theo mặc địn
 1. **Đầu nét cắt ngang/dọc** (đặc điểm nhận diện số 1). Kiểm lại ngày 20-10 trên ảnh phóng to:
    SF Pro (Text và Display) và Helvetica cũng cắt c, s nằm ngang, chỉ Inter cắt xiên gần vuông
    góc với nét. Đề xuất giữ lối cắt theo lưới vì nó khớp với SF; vẫn chờ chốt.
-2. **Cỡ hiển thị:** trong Chromium, KÉT rộng ngang SF ở 13–14 px. Từ 16 px trở lên, KÉT rộng hơn
-   3–8% vì SF tự siết tracking theo optical size. Có hai cách: thêm trục `opsz`, hoặc đặt token
-   letter-spacing âm cho cỡ ≥ 20 px. Chưa có `opsz`.
+2. **Cỡ hiển thị:** 0.301 thêm `opsz` cho spacing; font tĩnh vẫn giữ nhịp Text của 0.300.
+   Kiểm bản optical ở 13–16 px và 32–120 px trên từng bộ rasterizer. Bốn weight có cùng
+   lịch biến thiên, nhưng mức giảm sidebearing tính từ từng weight. Chưa kiểm Windows/ClearType.
 3. **Số mặc định tabular:** thẳng cột trong bảng, nhưng thưa trong câu chữ (`HN-0012`). Tiền tệ
    và dấu toán giờ cũng tabular để thẳng cột với số. `pnum` chưa có.
 
